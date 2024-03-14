@@ -3,3 +3,25 @@
     src: url("../fonts/Gagalin-Regular.otf") format('opentype'),
          url("../fonts/Gagalin-Regular.ttf") format('truetype');
 }
+
+@font-face {
+    font-family: 'Aleo';
+    src: url("../fonts/aleo-bold-webfont.eot") format('opentype'),
+         url("../fonts/aleo-bold-webfont.woff") format('woff'),
+         url("../fonts/aleo-bold-webfont.woff2") format('woff2'),
+         url("../fonts/aleo-regular-webfont.eot") format('opentype'),
+         url("../fonts/aleo-regular-webfont.woff") format('woff'),
+         url("../fonts/aleo-regular-webfont.woff2") format('woff2'),
+         url("../fonts/aleo-italic-webfont.eot") format('opentype'),
+         url("../fonts/aleo-italic-webfont.woff") format('woff'),
+         url("../fonts/aleo-italic-webfont.woff2") format('woff2'),
+         url("../fonts/aleo-bolditalic-webfont.eot") format('opentype'),
+         url("../fonts/aleo-bolditalic-webfont.woff") format('woff'),
+         url("../fonts/aleo-bolditalic-webfont.woff2") format('woff2'),
+         url("../fonts/aleo-light-webfont.eot") format('opentype'),
+         url("../fonts/aleo-light-webfont.woff") format('woff'),
+         url("../fonts/aleo-light-webfont.woff2") format('woff2'),
+         url("../fonts/aleo-lightitalic-webfont.eot") format('opentype'),
+         url("../fonts/aleo-lightitalic-webfont.woff") format('woff'),
+         url("../fonts/aleo-lightitalic-webfont.woff2") format('woff2');
+}
