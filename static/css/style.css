@@ -68,21 +68,26 @@ header {
 }
 
 .navbar {
-    background-color: #381D2A;
-    color: #FFA552;
+    background-color: #dd2700;
+    color: #381D2A;
     padding: 0;
 }
 
 .logo {
-    height: 70px;
-    width: auto;
-    padding: 8px 32px;
-    margin-top: 32px;
+
+    border-radius: 50%;
+    border: 2px solid black;
 }
 
-.navbar-toggler {
-    color: #F6F7F8;
+.navbar-light .navbar-toggler {
+    color: #FFA552;
     border: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: none;
+    border: none;
+    color: #FFA552;
 }
 
 .navbar-nav {
@@ -103,12 +108,12 @@ header {
   }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #FFA552;
+    color: #381D2A;
 }
 
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #BA5624;
+    color: #5a263f;
 }
 
 .dropdown-menu {
@@ -119,8 +124,8 @@ header {
 
 footer {
     font-family: "Aleo", sans-serif;
-    background-color: #381D2A;
-    color: #FFA552;
+    background-color: #dd2700;
+    color: #381D2A;
     font-size: 20px;
     font-weight: 500;
     min-height: 30px;
