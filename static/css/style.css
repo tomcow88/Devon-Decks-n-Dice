@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'Gagalin';
+    src: url("../fonts/Gagalin-Regular.otf") format('opentype'),
+         url("../fonts/Gagalin-Regular.ttf") format('truetype');
+}
