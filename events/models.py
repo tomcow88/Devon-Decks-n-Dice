@@ -21,10 +21,10 @@ class Event(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
-        ordering = ["-event_date"]
+        ordering = ["event_date"]
 
     def __str__(self):
-        return f"{self.name} on {self.event_date}"
+        return f"{self.name} on {self.event_date} at {self.event_time}"
 
 
 class Comment(models.Model):
