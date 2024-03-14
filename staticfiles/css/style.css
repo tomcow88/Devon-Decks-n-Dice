@@ -1,0 +1,281 @@
+@font-face {
+    font-family: 'Gagalin';
+    src: url("../fonts/Gagalin-Regular.otf") format('opentype'),
+         url("../fonts/Gagalin-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Aleo';
+    src: url("../fonts/aleo-bold-webfont.eot") format('opentype'),
+         url("../fonts/aleo-bold-webfont.woff") format('woff'),
+         url("../fonts/aleo-bold-webfont.woff2") format('woff2'),
+         url("../fonts/aleo-regular-webfont.eot") format('opentype'),
+         url("../fonts/aleo-regular-webfont.woff") format('woff'),
+         url("../fonts/aleo-regular-webfont.woff2") format('woff2'),
+         url("../fonts/aleo-italic-webfont.eot") format('opentype'),
+         url("../fonts/aleo-italic-webfont.woff") format('woff'),
+         url("../fonts/aleo-italic-webfont.woff2") format('woff2'),
+         url("../fonts/aleo-bolditalic-webfont.eot") format('opentype'),
+         url("../fonts/aleo-bolditalic-webfont.woff") format('woff'),
+         url("../fonts/aleo-bolditalic-webfont.woff2") format('woff2'),
+         url("../fonts/aleo-light-webfont.eot") format('opentype'),
+         url("../fonts/aleo-light-webfont.woff") format('woff'),
+         url("../fonts/aleo-light-webfont.woff2") format('woff2'),
+         url("../fonts/aleo-lightitalic-webfont.eot") format('opentype'),
+         url("../fonts/aleo-lightitalic-webfont.woff") format('woff'),
+         url("../fonts/aleo-lightitalic-webfont.woff2") format('woff2');
+}
+
+/*---------- General Styles ---------------*/
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Aleo', sans-serif;
+    margin: 0;
+}
+
+p {
+    font-family: 'Aleo', sans-serif;
+    margin: 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+
+main {
+    background-color: #FCDE9C;
+    height: calc(100vh - 228px);
+    padding-top: 30px;
+}
+
+
+
+/*-------------Header --------------------*/
+
+header {
+    font-family: "Aleo", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #381D2A;
+    color: #FFA552;
+    padding: 0;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+    padding: 8px 32px;
+    margin-top: 32px;
+}
+
+.navbar-toggler {
+    color: #F6F7F8;
+    border: none;
+}
+
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    text-align: center;
+}
+
+.navbar-nav .nav-link {
+    white-space: nowrap;
+    flex-grow: 1;
+    margin: 0 10px;
+    margin-bottom: 4px;
+  }
+
+.navbar-light .navbar-nav .nav-link {
+    color: #FFA552;
+}
+
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #BA5624;
+}
+
+.dropdown-menu {
+    background-color: #5a263f;
+}
+
+/*--------- Footer ----------------------*/
+
+footer {
+    font-family: "Aleo", sans-serif;
+    background-color: #381D2A;
+    color: #FFA552;
+    font-size: 20px;
+    font-weight: 500;
+    min-height: 30px;
+    width: 100%;
+    margin: 0;
+}
+
+.footer-item {
+    font-size: 30px;
+}
+
+.footer-item {
+    padding: 0 22px;
+    color: #ffd900;
+}
+
+
+/*-------------Event List-------------------*/
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: #381D2A;
+}
+
+.scale {
+    width: 100%;
+    height: auto;
+}
+
+.event-name {
+    color: #FFA552;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+}
+
+.masthead-text {
+    background-color: #445261;
+    color: white;
+    position: relative;
+}
+
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
+    height: 100%;
+    width: 150%;
+    background: #445261;
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    transform: skew(15deg);
+    z-index: 100;
+}
+
+.event-link {
+    text-decoration: none;
+    color: #445261;
+}
+
+.event-link:hover,
+.page-link {
+    color: #E84610;
+}
+
+.event-name {
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.event-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
+.btn-signup,
+.btn-edit {
+    background-color: #188181;
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #23BBBB;
+}
+
+.link {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-delete {
+    color: #fff;
+    background: #E84610;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
+
+.faded {
+    color: rgb(172, 175, 175);
+}
+
+.approval {
+    color: rgb(222, 146, 168);
+}
+
+/*---------Media Queries-----------------------------*/
+
+@media only screen and (min-width: 576px) {
+
+    .logo {
+        height: 120px;
+    }
+}
