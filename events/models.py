@@ -17,7 +17,7 @@ class Event(models.Model):
     event_date = models.DateField()
     event_time = models.TimeField()
     max_attendees = models.IntegerField()
-    attendees = models.ManyToManyField(User)
+    attendees = models.ManyToManyField(User, blank=True, related_name='event')
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
@@ -39,7 +39,7 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User, related_name='comments')
+    likes = models.ManyToManyField(User, blank=True, related_name='comments')
 
     class Meta:
         ordering = ["created_on"]

@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +14,7 @@
 <body>
     <h1>Events list</h1>
     {% for event in object_list %}
-    <h2>{{event.title}}</h2>
+    <h2>{{event.name}}</h2>
     <p>{{event.excerpt}}</p>
     <p>Date: {{event.event_date}}</p>
     <p>Time: {{event.event_time}}</p>
@@ -20,3 +23,4 @@
 </body>
 
 </html>
+{% endblock %}
