@@ -8,7 +8,7 @@ class EventAdmin(SummernoteModelAdmin):
     list_display = ('name', 'event_date', 'event_time', 'status')
     search_fields = ['name']
     list_filter = ('status',)
-    summernote_fields = ('content',)
+    summernote_fields = ('description',)
 
 # Register your models here.
 

@@ -6,4 +6,7 @@ urlpatterns = [
     path('events/<int:event_id>/', views.event_detail, name="event_detail"),
     path('events/<int:event_id>/edit_comment/<int:comment_id>',
         views.comment_edit, name='comment_edit'),
+    path('events/<int:event_id>/delete_comment/<int:comment_id>',
+        views.comment_delete, name='comment_delete'),
+    path('attend/<int:event_id>', views.AttendView, name='attend_event'),
 ]

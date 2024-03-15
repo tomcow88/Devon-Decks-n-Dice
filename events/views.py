@@ -31,6 +31,7 @@ def event_detail(request, event_id):
     event = get_object_or_404(queryset, id=event_id)
     comments = event.comments.all().order_by("-created_on")
     comment_count = event.comments.filter(approved=True).count()
+    attendees_count = event.attendees.all().count()
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
@@ -54,6 +55,7 @@ def event_detail(request, event_id):
             "comments": comments,
             "comment_count": comment_count,
             "comment_form": comment_form,
+            "attendees_count": attendees_count,
         },
     )
 
@@ -77,4 +79,25 @@ def comment_edit(request, event_id, comment_id):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
+    return HttpResponseRedirect(reverse('event_detail', args=[event_id]))
+
+def comment_delete(request, event_id, comment_id):
+    """
+    view to delete comment
+    """
+    queryset = Event.objects.filter(status=1)
+    post = get_object_or_404(queryset, id=event_id)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if comment.author == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+
+    return HttpResponseRedirect(reverse('event_detail', args=[event_id]))
+
+def AttendView(request, event_id):
+    event = get_object_or_404(Event, id=request.POST.get('event_id'))
+    event.attendees.add(request.user)
     return HttpResponseRedirect(reverse('event_detail', args=[event_id]))
