@@ -145,6 +145,11 @@ footer {
     color: #ffd900;
 }
 
+/*--------------Booking-Form----------------*/
+
+.booking-form {
+    height: 40%;
+}
 
 /*-------------Event List-------------------*/
 
