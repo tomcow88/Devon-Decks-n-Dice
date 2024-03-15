@@ -145,6 +145,21 @@ footer {
     color: #ffd900;
 }
 
+/*------------------Accounts------------------*/
+
+form.signup .form-control, form.signup label {
+    font-size: 14px;
+  }
+  
+  form.signup .form-group {
+    margin-bottom: 10px;
+  }
+
+/*--------------Booking-Form----------------*/
+
+.booking-form {
+    height: 40%;
+}
 
 /*-------------Event List-------------------*/
 
