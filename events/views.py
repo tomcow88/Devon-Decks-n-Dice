@@ -7,6 +7,9 @@ from .forms import CommentForm
 
 # Create your views here.
 
+def home(request):
+    return render(request, "index.html")
+
 
 class EventList(generic.ListView):
     queryset = Event.objects.filter(status=1)
@@ -33,6 +36,10 @@ def event_detail(request, event_id):
     comment_count = event.comments.filter(approved=True).count()
     attendees_count = event.attendees.all().count()
 
+    attending = False
+    if event.attendees.filter(id=request.user.id).exists():
+        attending = True
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -56,6 +63,7 @@ def event_detail(request, event_id):
             "comment_count": comment_count,
             "comment_form": comment_form,
             "attendees_count": attendees_count,
+            "attending": attending,
         },
     )
 
@@ -99,5 +107,14 @@ def comment_delete(request, event_id, comment_id):
 
 def AttendView(request, event_id):
     event = get_object_or_404(Event, id=request.POST.get('event_id'))
-    event.attendees.add(request.user)
+
+    attending = False
+
+    if event.attendees.filter(id=request.user.id).exists():
+        event.attendees.remove(request.user)
+        attending = False
+    else:
+        event.attendees.add(request.user)
+        attending = True
+
     return HttpResponseRedirect(reverse('event_detail', args=[event_id]))

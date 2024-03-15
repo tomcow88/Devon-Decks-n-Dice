@@ -33,12 +33,20 @@
             </strong>
         </div>
         <div class="col-6 text-end">
-            <p>{{ attendees_count }} / {{ event.max_attendees }}</p>
-            <form action="{% url 'attend_event' event.pk %}"
-            method="POST">
-            {% csrf_token %}
-            <button type="submit", name="event_id", value="{{ event.id }}",
-            class="btn btn-primary btn-sm">I'll be there!</button>
+            <p><i class="fa-regular fa-hand-spock"></i> - {{ attendees_count }} / {{ event.max_attendees }}</p>
+            <form action="{% url 'attend_event' event.pk %}" method="POST">
+                {% csrf_token %}
+                {% if user.is_authenticated %}
+                {% if attending %}
+                <button type="submit" , name="event_id" , value="{{ event.id }}" , class="btn btn-danger btn-sm">Changed
+                    my mind.</button>
+                {% else %}
+                <button type="submit" , name="event_id" , value="{{ event.id }}" , class="btn btn-primary btn-sm">I
+                    can't be there!</button>
+                {% endif %}
+                {% else %}
+                <small><a href="{% url 'account_login' %}">Login</a> to register interest!</small>
+                {% endif %}
             </form>
         </div>
         <div class="col-12">
@@ -86,7 +94,7 @@
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% else %}
-                <p>Log in to leave a comment</p>
+                <p><a href="{% url 'account_login' %}">Login</a> to leave a comment</p>
                 {% endif %}
             </div>
         </div>
@@ -94,28 +102,24 @@
 </div>
 
 <!-- Delete confirmation modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1"
-  aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"
-          id="deleteModalLabel">Delete comment?</h5>
-        <button type="button" class="btn-close"
-          data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete your comment?
-        This action cannot be undone.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
-          data-bs-dismiss="modal">Close</button>
-        <a id="deleteConfirm" href="#" class="btn
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your comment?
+                This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deleteConfirm" href="#" class="btn
           btn-danger">Delete</a>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 {% endblock content %}

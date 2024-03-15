@@ -17,10 +17,9 @@
                             <div class="image-container">
                                 {% if "placeholder" in event.featured_image.url %}
                                 <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                  alt="placeholder image">
+                                    alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ event.featured_image.url }}"
-                                  alt="{{ event.name }}">
+                                <img class="card-img-top" src=" {{ event.featured_image.url }}" alt="{{ event.name }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="event-name">Event: {{ event.name }}</p>
@@ -31,8 +30,14 @@
                             </a>
 
                             <hr />
-                            <p class="card-text text-end h5">{{ event.event_date }} at {{ event.event_time }}
-                            </p>
+                            <div class="row">
+                                <div class="col-md-6 text-start">
+                                    <p class="card-text h5"><i class="fa-regular fa-user"></i> - {{ attendees_count }} / {{ event.max_attendees }}</p>
+                                </div>
+                                <div class="col-md-6 text-end">
+                                    <p class="card-text h5">{{ event.event_date }} at {{ event.event_time }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
