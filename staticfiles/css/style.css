@@ -50,9 +50,12 @@ p {
 }
 
 
+body {
+    background-color: #FAF9F6;
+}
+
 main {
-    background-color: #FCDE9C;
-    height: calc(100vh - 228px);
+    background-color: #FAF9F6;
     padding-top: 30px;
 }
 
@@ -68,13 +71,15 @@ header {
 }
 
 .navbar {
-    background-color: #381D2A;
-    color: #FFA552;
+    background-color: #dd2700;
+    color: #381D2A;
     padding: 0;
 }
 
 .logo {
 
+    border-radius: 50%;
+    border: 2px solid black;
 }
 
 .navbar-light .navbar-toggler {
@@ -106,12 +111,12 @@ header {
   }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #FFA552;
+    color: #381D2A;
 }
 
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #BA5624;
+    color: #5a263f;
 }
 
 .dropdown-menu {
@@ -122,8 +127,8 @@ header {
 
 footer {
     font-family: "Aleo", sans-serif;
-    background-color: #381D2A;
-    color: #FFA552;
+    background-color: #dd2700;
+    color: #381D2A;
     font-size: 20px;
     font-weight: 500;
     min-height: 30px;
@@ -143,6 +148,18 @@ footer {
 
 /*-------------Event List-------------------*/
 
+.light-bg {
+    background-color: #fff;
+}
+
+.dark-bg {
+    background-color: #445261;
+}
+
+.main-bg {
+    background-color: #F9FAFC;
+}
+
 .card {
     border: none;
     background-color: transparent;
@@ -150,14 +167,26 @@ footer {
 
 .image-container {
     position: relative;
+    height: 300px;
+    overflow: hidden;
 }
 
 .image-flash {
     position: absolute;
-    bottom: 5%;
+    top: 20%;
     min-width: 30%;
     left: -2px;
     background-color: #381D2A;
+    background: linear-gradient(to right, #381D2A 70%, rgb(221, 39, 0, 0.8) 100%);
+    box-shadow: 0px 0px 20px 10px #dd2700;
+}
+
+.image-flash::after {
+    content: '';
+    position: absolute;
+    top: -10px; right: -10px; bottom: -10px; left: -10px;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0) 60%, #dd2700 100%);
 }
 
 .scale {
@@ -165,8 +194,8 @@ footer {
     height: auto;
 }
 
-.event-name {
-    color: #FFA552;
+.author {
+    color: white;
     margin: 4px;
     text-transform: uppercase;
 }
@@ -181,7 +210,7 @@ footer {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #381D2A;
     color: white;
     position: relative;
 }
@@ -189,6 +218,7 @@ footer {
 .masthead-image {
     position: relative;
     overflow: hidden;
+    top: -200px;
 }
 
 .masthead-image:after {
@@ -198,7 +228,7 @@ footer {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #381D2A;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -216,8 +246,8 @@ footer {
 }
 
 .event-name {
-    margin-top: 10%;
     margin-left: 5%;
+    color: #ffd900;
 }
 
 .event-subtitle {
@@ -272,6 +302,14 @@ footer {
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+.success {
+    background-color: #23BBBB;
+}
+
+.form-control {
+    height: 40%;
 }
 
 /*---------Media Queries-----------------------------*/
