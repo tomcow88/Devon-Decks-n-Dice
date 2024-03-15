@@ -38,11 +38,9 @@
                 {% csrf_token %}
                 {% if user.is_authenticated %}
                 {% if attending %}
-                <button type="submit" , name="event_id" , value="{{ event.id }}" , class="btn btn-danger btn-sm">Changed
-                    my mind.</button>
+                <button type="submit" , name="event_id" , value="{{ event.id }}" , class="btn btn-danger btn-sm">I can't attend</button>
                 {% else %}
-                <button type="submit" , name="event_id" , value="{{ event.id }}" , class="btn btn-primary btn-sm">I
-                    can't be there!</button>
+                <button type="submit" , name="event_id" , value="{{ event.id }}" , class="btn btn-primary btn-sm">I'll be there!</button>
                 {% endif %}
                 {% else %}
                 <small><a href="{% url 'account_login' %}">Login</a> to register interest!</small>
@@ -76,8 +74,8 @@
                     </p>
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}
-                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                    <button class="btn btn-sm btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                    <button class="btn btn-sm btn-delete" comment_id="{{ comment.id }}">Delete</button>
                     {% endif %}
                 </div>
                 {% endfor %}
