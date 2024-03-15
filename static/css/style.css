@@ -50,6 +50,10 @@ p {
 }
 
 
+body {
+    background-color: #FAF9F6;
+}
+
 main {
     background-color: #FAF9F6;
     padding-top: 30px;
@@ -206,7 +210,7 @@ footer {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #381D2A;
     color: white;
     position: relative;
 }
@@ -214,6 +218,7 @@ footer {
 .masthead-image {
     position: relative;
     overflow: hidden;
+    top: -200px;
 }
 
 .masthead-image:after {
@@ -223,7 +228,7 @@ footer {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #381D2A;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -297,6 +302,10 @@ footer {
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+.success {
+    background-color: #23BBBB;
 }
 
 /*---------Media Queries-----------------------------*/

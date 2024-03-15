@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'django-insecure-$4%it5nga&ng03nwh3q97e39#&mn_%rqwb$9s0h@c$hz74kv24'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '.gitpod.io',
@@ -53,12 +53,17 @@ INSTALLED_APPS = [
     'events',
     'bootstrap5',
     'cloudinary',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'django_summernote',
 ]
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
