@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'events',
+    'bookings',
     'bootstrap5',
     'cloudinary',
     'crispy_forms',
