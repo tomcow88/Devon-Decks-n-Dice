@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 {% load static %}
+{% load humanize %}
 {% load crispy_forms_tags %}
 
 <div class="masthead">
@@ -62,7 +63,7 @@
                     <p class="font-weight-bold">
                         {{ comment.author }}
                         <span class="font-weight-normal">
-                            {{ comment.created_on }}
+                            {{ comment.created_on | naturaltime }}
                         </span> wrote:
                     </p>
                     <div id="comment{{ comment.id }}">
