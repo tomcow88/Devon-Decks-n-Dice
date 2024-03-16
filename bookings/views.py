@@ -17,6 +17,11 @@ def create_booking(request):
             try:
                 booking = booking_form.save(commit=False)
                 booking.name = request.user
+                duplicate_bookings = Booking.objects.filter(name=request.user, date=booking.date)
+                if duplicate_bookings.exists():
+                    messages.error(request, 'You have already booked a table on this date. If you want to ammend your booking, please get in touch.')
+                    return render(request, 'bookings/booking_form.html', {'booking_form': booking_form})
+                booking.clean()
                 booking.save()
                 messages.add_message(
                     request, messages.SUCCESS,
@@ -24,10 +29,17 @@ def create_booking(request):
                 )
                 return redirect('bookings')
             except ValidationError as e:
-                messages.error(request, e.message)
+                if hasattr(e, 'message_dict'):
+                    for field, messages_list in e.message_dict.items():
+                        for message in messages_list:
+                            messages.error(request, message)
+                else:
+                    for message in e.messages:
+                        messages.error(request, message)
         else:
-            messages.add_message(request, messages.ERROR,
-                                 'Please try again.')
+            for field, errors in booking_form.errors.items():
+                for error in errors:
+                    messages.error(request, error)
 
     booking_form = BookingForm()
     

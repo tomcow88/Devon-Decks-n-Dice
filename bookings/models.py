@@ -44,7 +44,13 @@ class Booking(models.Model):
         end_datetime = start_datetime + datetime.timedelta(hours=self.session_length)
         return end_datetime.time()
 
+    def clean(self):
+        booking_datetime = datetime.datetime.combine(self.date, datetime.datetime.strptime(self.start_time, '%H:%M').time())
+        if booking_datetime < datetime.datetime.now():
+            raise ValidationError('Cannot book in the past.') 
+
     def save(self, *args, **kwargs):
+        self.clean()
         if not self.pk:
             self.end_time = self.calculate_end_time()
             self.table = self.find_available_table()

@@ -57,6 +57,7 @@ body {
 main {
     background-color: #FAF9F6;
     padding-top: 30px;
+    min-height: calc(100vh - 196px);
 }
 
 
@@ -77,7 +78,7 @@ header {
 }
 
 .logo {
-
+    height: 60px;
     border-radius: 50%;
     border: 2px solid black;
 }
@@ -145,13 +146,21 @@ footer {
     color: #ffd900;
 }
 
+/*------------Messages---------------*/
+
+.error {
+    margin-top: 12px;
+    background-color: #ff0033;
+}
+
+
 /*------------------Accounts------------------*/
 
 form.signup .form-control, form.signup label {
     font-size: 14px;
   }
   
-  form.signup .form-group {
+form.signup .form-group {
     margin-bottom: 10px;
   }
 
@@ -323,9 +332,6 @@ form.signup .form-control, form.signup label {
     background-color: #23BBBB;
 }
 
-.form-control {
-    height: 40%;
-}
 
 /*---------Media Queries-----------------------------*/
 
