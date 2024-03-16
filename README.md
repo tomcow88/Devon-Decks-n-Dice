@@ -1,4 +1,3 @@
-{% load static %}
 <h1>Devon Decks & Dice Board Games Cafe by Tom Cowen</h1>
 
 <strong>Table of Contents</strong>
@@ -29,22 +28,22 @@ Wireframes and database relational diagrams were created before any coding was s
 
 Wireframes were created with Balsamiq. The original plans were:
 
-<img src="{% static 'images/wireframes_1.png' %}" width="600">
+<img src="./static/images/wireframes_1.png" width="600">
 
-<img src="{% static 'images/wireframes_2.png' %}" width="600">
+<img src="./static/images/wireframes_2.png" width="600">
 
-<img src="{% static 'images/wireframes_3.png' %}" width="600">
+<img src="./static/images/wireframes_3.png" width="600">
 
-<img src="{% static 'images/wireframes_4.png' %}" width="600">
+<img src="./static/images/wireframes_4.png" width="600">
 
-<img src="{% static 'images/wireframes_5.png' %}" width="600">
+<img src="./static/images/wireframes_5.png" width="600">
 
-<img src="{% static 'images/wireframes_6.png' %}" width="600">
+<img src="./static/images/wireframes_6.png" width="600">
 
-<img src="{% static 'images/wireframes_7.png' %}" width="600">
+<img src="./static/images/wireframes_7.png" width="600">
 
-<img src="{% static 'images/wireframes_8.png' %}" width="600">
+<img src="./static/images/wireframes_8.png" width="600">
 
 Entity relationship diagrams were created with Lucidchart:
 
-<img src="{% static 'images/erdiagrams.jpeg' %}" width="600">
+<img src="./static/images/erdiagrams.jpeg" width="600">
