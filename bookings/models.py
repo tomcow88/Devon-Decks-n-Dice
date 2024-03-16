@@ -39,7 +39,7 @@ class Booking(models.Model):
     date = models.DateField()
     table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name="bookings")
 
-    def calculate_end_time(self):
+    def calculate_end_time(self): 
         start_datetime = datetime.datetime.strptime(self.start_time, '%H:%M')
         end_datetime = start_datetime + datetime.timedelta(hours=self.session_length)
         return end_datetime.time()
