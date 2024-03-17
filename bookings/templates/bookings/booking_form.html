@@ -4,10 +4,11 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6"></div> 
-        <div class="col-md-6 booking-form">
-            {% if user.is_authenticated %}
+    <div class="row booking-row">
+        <div class="col-md-8 booking-image-container"><img src="{% static 'images/cafe-interior.jpg' %}"
+                alt="Cafe Interior" class="booking-image img-fluid"></div>
+        {% if user.is_authenticated %}
+        <div class="col-md-4  booking-form">
             <h2>Book a Table</h2>
             <p>Hi {{ user.username|capfirst }}, would you like to make a booking?</p>
             <form method="post">
@@ -15,10 +16,12 @@
                 {{ booking_form|crispy }}
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            {% else %}
-            <h2><a href="{% url 'account_login' %}">Login</a> to book a table!</h2>
-            {% endif %}
         </div>
+        {% else %}
+        <div class="col-md-4 d-flex align-items-center">
+            <h2><a href="{% url 'account_login' %}">Login</a> to book a table!</h2>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
