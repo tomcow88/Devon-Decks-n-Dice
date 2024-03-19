@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ game.name }}</h5>
                     <p class="card-text">Published: {{ game.year_published }}</p>
-                    <form id="game-form-{{ game.bgg_id }}" onsubmit="event.preventDefault(); addGameToDatabase('{{ game.bgg_id }}');">
+                    <form id="game-form-{{ game.bgg_id }}">
                         {% csrf_token %}
                         <input type="hidden" name="bgg_id" value="{{ game.bgg_id }}">
                         <input type="hidden" name="name" value="{{ game.name }}">
