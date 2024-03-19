@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect, HttpResponseNotAllowed, JsonResponse
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 import requests
 import xml.etree.ElementTree as ET
 from .forms import SearchForm
@@ -30,6 +31,7 @@ def search_results(request):
     )
 
 
+@csrf_exempt
 def add_game_to_database(request):
     if request.method == 'POST':
         try:

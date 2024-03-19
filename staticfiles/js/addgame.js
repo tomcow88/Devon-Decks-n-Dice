@@ -2,7 +2,7 @@ function addGameToDatabase(bgg_id) {
     const form = document.getElementById(`game-form-${bgg_id}`);
     const formData = new FormData(form);
 
-    fetch('/add-game-to-database/', {
+    fetch('/library/add-game-to-database/', {
         method: 'POST',
         body: formData,
     })
