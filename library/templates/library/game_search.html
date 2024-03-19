@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-3">
+    <form action="{% url 'game_search' %}" method="get" class="form-inline my-2 my-lg-0">
+        {{ form.as_p }}
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <div class="row">
+        {% for game in page_obj %}
+        <div class="col-md-3 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ game.image }}" class="card-img-top" alt="{{ game.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ game.name }}</h5>
+                    <p class="card-text">Published: {{ game.year_published }}</p>
+                    <form id="game-form-{{ game.bgg_id }}" onsubmit="event.preventDefault(); addGameToDatabase('{{ game.bgg_id }}');">
+                        {% csrf_token %}
+                        <input type="hidden" name="bgg_id" value="{{ game.bgg_id }}">
+                        <input type="hidden" name="name" value="{{ game.name }}">
+                        <input type="hidden" name="year_published" value="{{ game.year_published }}">
+                        <input type="hidden" name="min_players" value="{{ game.min_players }}">
+                        <input type="hidden" name="max_players" value="{{ game.max_players }}">
+                        <input type="hidden" name="playing_time" value="{{ game.playing_time }}">
+                        <input type="hidden" name="age" value="{{ game.age }}">
+                        <input type="hidden" name="description" value="{{ game.description }}">
+                        <input type="hidden" name="image" value="{{ game.image }}">
+                        <input type="hidden" name="thumbnail" value="{{ game.thumbnail }}">
+                        <button type="submit" class="btn btn-primary">Add to Library</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:4 and not forloop.last %}
+    </div><div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% if is_paginated %}
+    <div class="mt-4">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li class="page-item"><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Previous</a></li>
+                {% endif %}
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="page-link">Next &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+</div>
+
+<script src="{% static 'path/to/your/addgame.js' %}"></script>
+{% endblock %}
