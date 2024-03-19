@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
@@ -102,7 +103,7 @@ def comment_delete(request, event_id, comment_id):
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
-
+ 
     return HttpResponseRedirect(reverse('event_detail', args=[event_id]))
 
 def AttendView(request, event_id):

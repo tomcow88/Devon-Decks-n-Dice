@@ -146,10 +146,10 @@ footer {
     color: #ffd900;
 }
 
+
 /*------------Messages---------------*/
 
 .error {
-    margin-top: 12px;
     background-color: #ff0033;
 }
 
@@ -166,12 +166,32 @@ form.signup .form-group {
 
 /*--------------Booking-Form----------------*/
 
-.booking-form {
-    height: 40%;
-}
+.booking-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .booking-image-container {
+    margin-right: 0;
+  }
+  
+  .booking-image {
+    min-height: auto;
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .booking-form {
+    padding: 0 20px;
+  }
 
 
 /*-------------Event List-------------------*/
+
+.card {
+    background-color: #FAF9F6;
+    border: none;
+}
 
 .light-bg {
     background-color: #fff;
@@ -182,12 +202,7 @@ form.signup .form-group {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
-}
-
-.card {
-    border: none;
-    background-color: transparent;
+    background-color: #FAF9F6;
 }
 
 .image-container {
@@ -210,19 +225,12 @@ form.signup .form-group {
     content: '';
     position: absolute;
     top: -10px; right: -10px; bottom: -10px; left: -10px;
-    z-index: -1;
     background: radial-gradient(circle, rgba(0, 255, 255, 0) 60%, #dd2700 100%);
 }
 
 .scale {
     width: 100%;
     height: auto;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
 }
 
 .masthead {
@@ -235,8 +243,8 @@ form.signup .form-group {
 }
 
 .masthead-text {
-    background-color: #381D2A;
-    color: white;
+    background-color: #FAF9F6;
+    color: #ff0033;
     position: relative;
 }
 
@@ -257,12 +265,19 @@ form.signup .form-group {
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
-    z-index: 100;
+}
+
+.list-details {
+    background: linear-gradient(to left, #FAF9F6 30%, #198754 100%);
+}
+
+.attendance {
+    color: #FAF9F6;
 }
 
 .event-link {
     text-decoration: none;
-    color: #445261;
+    color: #381D2A;
 }
 
 .event-link:hover,
@@ -303,22 +318,9 @@ form.signup .form-group {
     text-decoration: underline;
 }
 
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
 .btn-delete {
     color: #fff;
     background: #E84610;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
 }
 
 .faded {
@@ -342,3 +344,26 @@ form.signup .form-group {
         height: 120px;
     }
 }
+
+@media only screen and (min-width: 768px) {
+  
+    .booking-row {
+      flex-direction: row;
+      gap: 100px;
+    }
+    
+    .booking-image-container {
+      flex: 1;
+      margin-right: 30px;
+    }
+  
+    .booking-image {
+      min-height: 390px;
+      min-width: 390px;
+      width: auto;
+    }
+    
+    .booking-form {
+      flex: 1;
+    }
+  }

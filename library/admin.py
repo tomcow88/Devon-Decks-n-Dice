@@ -7,5 +7,6 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(BoardGame)
 class BoardGameAdmin(SummernoteModelAdmin):
 
-    list_display = ('name', 'bgg_id', 'year_published', 'min_players', 'max_players', 'playing_time', 'age', 'image', 'thumbnail', 'description', 'status')
+    list_display = ('name', 'bgg_id', 'year_published', 'status')
     search_fields = ['name']
+    list_filter = ('status',)

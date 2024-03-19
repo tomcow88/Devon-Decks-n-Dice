@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container mt-5">
     <div class="row booking-row">
-        <div class="col-md-8 booking-image-container"><img src="{% static 'images/cafe-interior.jpg' %}"
+        <div class="col-md-8 booking-image-container"><img src="{% static 'images/cafe-interior.png' %}"
                 alt="Cafe Interior" class="booking-image img-fluid"></div>
         {% if user.is_authenticated %}
         <div class="col-md-4  booking-form">
@@ -14,7 +14,7 @@
             <form method="post">
                 {% csrf_token %}
                 {{ booking_form|crispy }}
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-outline-success">Submit</button>
             </form>
         </div>
         {% else %}

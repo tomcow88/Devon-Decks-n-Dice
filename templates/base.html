@@ -20,6 +20,7 @@
     <meta name="author" content="Tom Cowen">
     <title>Devon Decks & Dice</title>
     <!-- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"> -->
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
@@ -48,18 +49,24 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'events' %}">Events</a>
                             </li>
-
+                            {% if request.user.is_superuser %}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Games Library</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Our Games</a>
+                                        <a class="nav-link" href="{% url 'library' %}">Library</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'game_search' %}">Games Search</a>
+                                        <a class="nav-link" href="{% url 'game_search' %}">Add to Games Library</a>
                                     </li>
                                 </ul>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'library' %}">Games Library</a>
+                            </li>
+                            {% endif %}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">

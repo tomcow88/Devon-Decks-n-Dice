@@ -1,12 +1,18 @@
-from django.http import HttpResponseRedirect, HttpResponseNotAllowed, JsonResponse
+from django.http import HttpResponseRedirect, HttpResponseNotAllowed
 from django.core.paginator import Paginator
+from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.views.decorators.csrf import csrf_exempt
+from django.urls import reverse
+from django.views import generic
 import requests
 import xml.etree.ElementTree as ET
 from .forms import SearchForm
 from .models import BoardGame
 
+class BoardGameList(generic.ListView):
+    queryset = BoardGame.objects.filter(status=1)
+    template_name = "library/boardgame_list.html"
+    paginate_by = 6
 
 def search_results(request):
     search_term = request.GET.get('query', '')
@@ -31,7 +37,6 @@ def search_results(request):
     )
 
 
-@csrf_exempt
 def add_game_to_database(request):
     if request.method == 'POST':
         try:
@@ -46,13 +51,13 @@ def add_game_to_database(request):
                 description=request.POST.get('description'),
                 image=request.POST.get('image'),
                 thumbnail=request.POST.get('thumbnail'),
-                status=0
+                status=1
             )
-            return JsonResponse({'success': True, 'message': 'Game added successfully.'})
+            messages.success(request, 'Game added to library.')
         except Exception as e:
-            return JsonResponse({'success': False, 'error': str(e)}, status=400)
-    else:
-        return JsonResponse({'success': False, 'error': 'Method not allowed'}, status=405)
+            messages.error(request, f'Failed to add the game: {str(e)}')
+
+        return HttpResponseRedirect(reverse('game_search'))
 
 
 def fetch_games(search_term):
@@ -62,7 +67,7 @@ def fetch_games(search_term):
         search_root = ET.fromstring(search_response.content)
         games_details = []
         
-        for item in list(search_root)[:12]:
+        for item in list(search_root)[:18]:
             bgg_id = item.get('id')
             
             details_response = requests.get(f'https://www.boardgamegeek.com/xmlapi2/thing?id={bgg_id}')
