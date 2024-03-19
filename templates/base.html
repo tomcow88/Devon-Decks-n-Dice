@@ -48,9 +48,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'events' %}">Events</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Games Library</a>
-                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Games Library</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Our Games</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'game_search' %}">Games Search</a>
+                                    </li>
+                                </ul>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
