@@ -61,5 +61,8 @@
     {% endif %}
 </div>
 
-<script src="{% static 'path/to/your/addgame.js' %}"></script>
+{% endblock %}
+
+{% block extras %}
+<script src="{% static 'js/addgame.js' %}"></script>
 {% endblock %}
