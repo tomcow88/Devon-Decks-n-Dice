@@ -28,11 +28,14 @@
 
 /*---------- General Styles ---------------*/
 
+* {
+    font-family: 'Aleo', sans-serif;
+}
+
 h1,
 h2,
 h3,
 h4 {
-    font-family: 'Aleo', sans-serif;
     margin: 0;
 }
 
@@ -69,6 +72,8 @@ header {
     font-size: 24px;
     font-weight: 300;
     margin: 0;
+    position: relative;
+    z-index: 5;
 }
 
 .navbar {
@@ -151,6 +156,17 @@ footer {
 
 .error {
     background-color: #ff0033;
+}
+
+.message-container {
+    position: absolute;
+    display: flex; 
+    justify-content: center;
+}
+
+.alert {
+    position: relative;
+    z-index: 1050;
 }
 
 
@@ -243,7 +259,7 @@ form.signup .form-group {
 }
 
 .masthead-text {
-    background-color: #FAF9F6;
+    background-color: #381D2A;
     color: #ff0033;
     position: relative;
 }
@@ -269,10 +285,6 @@ form.signup .form-group {
 
 .list-details {
     background: linear-gradient(to left, #FAF9F6 30%, #198754 100%);
-}
-
-.attendance {
-    color: #FAF9F6;
 }
 
 .event-link {

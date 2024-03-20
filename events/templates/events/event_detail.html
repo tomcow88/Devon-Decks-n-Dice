@@ -33,7 +33,7 @@
                 <i class="far fa-comments"></i> {{ comment_count }}
             </strong>
         </div>
-        <div class="attendance col-6 text-end">
+        <div class="col-6 text-end">
             <p><i class="fa-regular fa-hand-spock"></i> - {{ attendees_count }} / {{ event.max_attendees }}</p>
             <form action="{% url 'attend_event' event.pk %}" method="POST">
                 {% csrf_token %}
