@@ -10,7 +10,7 @@ from .forms import SearchForm
 from .models import BoardGame
 
 class BoardGameList(generic.ListView):
-    queryset = BoardGame.objects.filter(status=1)
+    queryset = BoardGame.objects.filter(status=1).order_by('name')
     template_name = "library/boardgame_list.html"
     paginate_by = 6
 

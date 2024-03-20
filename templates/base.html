@@ -3,6 +3,10 @@
 {% load bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
+{% url 'home' as home_url %}
+{% url 'bookings' as bookings_url %}
+{% url 'events' as events_url %}
+{% url 'library' as library_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -20,7 +24,6 @@
     <meta name="author" content="Tom Cowen">
     <title>Devon Decks & Dice</title>
     <!-- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"> -->
-    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
@@ -44,14 +47,17 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'bookings' %}">Book a Table</a>
+                                <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}" href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'events' %}">Events</a>
+                                <a class="nav-link {% if request.path == bookings_url %}active" aria-current="page{% endif %}" href="{% url 'bookings' %}">Book a Table</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == events_url %}active" aria-current="page{% endif %}" href="{% url 'events' %}">Events</a>
                             </li>
                             {% if request.user.is_superuser %}
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                <a class="nav-link dropdown-toggle {% if request.path == library_url %}active" aria-current="page{% endif %}" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Games Library</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li class="nav-item">
@@ -64,23 +70,20 @@
                             </li>
                             {% else %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'library' %}">Games Library</a>
+                                <a class="nav-link {% if request.path == library_url %}active" aria-current="page{% endif %}" href="{% url 'library' %}">Games Library</a>
                             </li>
                             {% endif %}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     {% if user.is_authenticated %}
-                                    {{ user.username|upper }}
+                                    {{ user.username|capfirst }}
                                     {% else %}
                                     Account
                                     {% endif %}
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     {% if user.is_authenticated %}
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Profile</a>
-                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
                                             aria-current="page" href="{% url 'account_logout' %}">Logout</a>

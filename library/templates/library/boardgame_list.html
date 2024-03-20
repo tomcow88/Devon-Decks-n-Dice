@@ -4,10 +4,16 @@
 {% block content %}
 <main class="flex-shrink-0">
     <div class="container mt-4">
+        <div class="row text-center p-3 library-header">
+            <div class="col-12 mb-5">
+                <h1>Games Library</h1>
+                <p>Don't see what you're looking for?<br>Let us know what you're after and we'll look into it.</p>
+            </div>
+        </div>
         {% for game in boardgame_list %}
-        <div class="row mb-4">
-            <div class="col-md-3">
-                <img src="{{ game.image }}" alt="{{ game.name }}" class="img-fluid">
+        <div class="row mb-5 pb-5">
+            <div class="col-md-3 d-flex justify-content-center">
+                <img src="{{ game.image }}" alt="{{ game.name }}" class="img-fluid library-img-fluid">
             </div>
             <div class="col-md-9">
                 <h2>{{ game.name }}</h2>
@@ -15,7 +21,7 @@
                 <p><strong>Players:</strong> {{ game.min_players }} - {{ game.max_players }}</p>
                 <p><strong>Playing time:</strong> {{ game.playing_time }} minutes</p>
                 <p><strong>Age:</strong> {{ game.age }}+</p>
-                <p>{{ game.description|safe }}</p>
+                <p class="scroll-text">{{ game.description|safe }}</p>
             </div>
         </div>
         {% empty %}
