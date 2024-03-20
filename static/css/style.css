@@ -386,6 +386,27 @@ form.signup .form-group {
     background-color: #23BBBB;
 }
 
+/*--------------------Library-------------------------*/
+
+.game-card-deck .game-card {
+height: 100%;
+}
+
+.game-card-img-top {
+width: 100%;
+max-height: 200px;
+object-fit: contain;
+}
+
+.game-card-body {
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+
+.game-card-body > form {
+margin-top: auto;
+}
 
 /*---------Media Queries-----------------------------*/
 
@@ -420,5 +441,9 @@ form.signup .form-group {
 
     .hours-table {
         font-size: 30px;
+    }
+
+    .game-card-img-top {
+        max-height: 320px;
     }
   }

@@ -2,46 +2,48 @@
 {% load static %}
 
 {% block content %}
-<div class="container mt-4">
-    {% for game in boardgame_list %}
-    <div class="row mb-4">
-        <div class="col-md-3">
-            <img src="{{ game.image }}" alt="{{ game.name }}" class="img-fluid">
+<main class="flex-shrink-0">
+    <div class="container mt-4">
+        {% for game in boardgame_list %}
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <img src="{{ game.image }}" alt="{{ game.name }}" class="img-fluid">
+            </div>
+            <div class="col-md-9">
+                <h2>{{ game.name }}</h2>
+                <p><strong>Published:</strong> {{ game.year_published }}</p>
+                <p><strong>Players:</strong> {{ game.min_players }} - {{ game.max_players }}</p>
+                <p><strong>Playing time:</strong> {{ game.playing_time }} minutes</p>
+                <p><strong>Age:</strong> {{ game.age }}+</p>
+                <p>{{ game.description|safe }}</p>
+            </div>
         </div>
-        <div class="col-md-9">
-            <h2>{{ game.name }}</h2>
-            <p><strong>Published:</strong> {{ game.year_published }}</p>
-            <p><strong>Players:</strong> {{ game.min_players }} - {{ game.max_players }}</p>
-            <p><strong>Playing time:</strong> {{ game.playing_time }} minutes</p>
-            <p><strong>Age:</strong> {{ game.age }}+</p>
-            <p>{{ game.description|safe }}</p>
-        </div>
-    </div>
-    {% empty %}
-    <p>No games found.</p>
-    {% endfor %}
-</div>
-{% if is_paginated %}
-<div class="mt-4 mb-4 text-center">
-    <div class="btn-group" role="group" aria-label="Page navigation">
-        {% if page_obj.has_previous %}
-        <button type="button" class="btn btn-success"
-            onclick="window.location.href='?page={{ page_obj.previous_page_number }}';">&laquo; Previous</button>
-        {% endif %}
-        {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-        <button type="button" class="btn btn-success"
-            onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
-        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <button type="button" class="btn btn-outline-success"
-            onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
-        {% endif %}
+        {% empty %}
+        <p>No games found.</p>
         {% endfor %}
-        {% if page_obj.has_next %}
-        <button type="button" class="btn btn-success"
-            onclick="window.location.href='?page={{ page_obj.next_page_number }}';">Next &raquo;</button>
-        {% endif %}
     </div>
-</div>
-{% endif %}
+    {% if is_paginated %}
+    <div class="mt-4 mb-4 text-center">
+        <div class="btn-group" role="group" aria-label="Page navigation">
+            {% if page_obj.has_previous %}
+            <button type="button" class="btn btn-success"
+                onclick="window.location.href='?page={{ page_obj.previous_page_number }}';">&laquo; Previous</button>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <button type="button" class="btn btn-success"
+                onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <button type="button" class="btn btn-outline-success"
+                onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
+            {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <button type="button" class="btn btn-success"
+                onclick="window.location.href='?page={{ page_obj.next_page_number }}';">Next &raquo;</button>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</main>
 {% endblock %}

@@ -3,51 +3,53 @@
 {% block content %}
 <main class="flex-shrink-0 hero-container">
   <img src="{% static 'images/herov3.jpg' %}" alt="Hero Image" class="hero-image">
-    <div class="hero-cover-text ">
-      <h5>
-        Craving an epic game night? Grab a seat at one of our tables or get first dibs on our upcoming events by
-        signing up here. <br><br>Check out our extensive games library, we've got something for everyone, and if you don't see what you are after, let us know and we'll consider adding it to the collection!<br><br>Find us on Torrington Vale High Street.<br><br>  Ready to level up? Let’s roll.
-      </h5>
-    </div>
-    <div class="opening-hours">
-      <table class="hours-table">
-        <tr>
-          <td>Monday</td>
-          <td>Closed</td>
-          <td>Closed</td>
-        </tr>
-        <tr>
-          <td>Tuesday</td>
-          <td>Closed</td>
-          <td>Closed</td>
-        </tr>
-        <tr>
-          <td>Wednesday</td>
-          <td>10 AM -&nbsp</td>
-          <td>10 PM</td>
-        </tr>
-        <tr>
-          <td>Thursday</td>
-          <td>10 AM-&nbsp</td>
-          <td>10 PM</td>
-        </tr>
-        <tr>
-          <td>Friday</td>
-          <td>10 AM-&nbsp</td>
-          <td>10 PM</td>
-        </tr>
-        <tr>
-          <td>Saturday</td>
-          <td>10 AM-&nbsp</td>
-          <td>10 PM</td>
-        </tr>
-        <tr>
-          <td>Sunday</td>
-          <td>10 AM-&nbsp</td>
-          <td>10 PM</td>
-        </tr>
-      </table>
-    </div>
+  <div class="hero-cover-text ">
+    <h5>
+      Craving an epic game night? Grab a seat at one of our tables or get first dibs on our upcoming events by
+      signing up <a href="{% url 'account_login' %}">here</a>. <br><br>Check out our extensive games library, we've got something for everyone, and if you don't
+      see what you are after, let us know and we'll consider adding it to the collection!<br><br>Find us on Torrington
+      Vale High Street.<br><br> Ready to level up? Let’s roll.
+    </h5>
+  </div>
+  <div class="opening-hours">
+    <table class="hours-table">
+      <tr>
+        <td>Monday</td>
+        <td>Closed</td>
+        <td>Closed</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Closed</td>
+        <td>Closed</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>10 AM -&nbsp</td>
+        <td>10 PM</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>10 AM-&nbsp</td>
+        <td>10 PM</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>10 AM-&nbsp</td>
+        <td>10 PM</td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td>10 AM-&nbsp</td>
+        <td>10 PM</td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td>10 AM-&nbsp</td>
+        <td>10 PM</td>
+      </tr>
+    </table>
+  </div>
 
 </main>
 {% endblock %}

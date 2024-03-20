@@ -2,71 +2,77 @@
 {% load static %}
 
 {% block content %}
-<div class="container mt-5">
-    <form action="{% url 'game_search' %}" method="get" class="my-2 my-lg-0">
-        <div class="input-group mb-3">
-            <input type="text" name="query" value="{{ request.GET.query }}" class="form-control"
-                placeholder="Search games" aria-label="Search" style="flex-grow: 1;">
-            <div class="input-group-append">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </div>
-        </div>
-    </form>
-
-    <div class="row">
-        {% for game in page_obj %}
-        <div class="col-md-3 mb-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ game.image }}" class="card-img-top" alt="{{ game.name }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ game.name }}</h5>
-                    <p class="card-text">Published: {{ game.year_published }}</p>
-                    <form id="game-form-{{ game.bgg_id }}" method="post" action="{% url 'add_game_to_database' %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="bgg_id" value="{{ game.bgg_id }}">
-                        <input type="hidden" name="name" value="{{ game.name }}">
-                        <input type="hidden" name="year_published" value="{{ game.year_published }}">
-                        <input type="hidden" name="min_players" value="{{ game.min_players }}">
-                        <input type="hidden" name="max_players" value="{{ game.max_players }}">
-                        <input type="hidden" name="playing_time" value="{{ game.playing_time }}">
-                        <input type="hidden" name="age" value="{{ game.age }}">
-                        <input type="hidden" name="description" value="{{ game.description }}">
-                        <input type="hidden" name="image" value="{{ game.image }}">
-                        <input type="hidden" name="thumbnail" value="{{ game.thumbnail }}">
-                        <button type="submit" class="btn btn-success">Add to Library</button>
-                    </form>
+<main class="flex-shrink-0">
+    <div class="container mt-5">
+        <form action="{% url 'game_search' %}" method="get" class="my-2 my-lg-0">
+            <div class="input-group mb-5">
+                <input type="text" name="query" value="{{ request.GET.query }}" class="form-control"
+                    placeholder="Search games" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                 </div>
             </div>
+        </form>
+
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+            {% for game in page_obj %}
+            <div class="col">
+                <div class="card game-card h-100">
+                    <img src="{{ game.image }}" class="card-img-top game-card-img-top" alt="{{ game.name }}">
+                    <div class="card-body game-card-body d-flex flex-column">
+                        <h5 class="card-title game-card-title">{{ game.name }}</h5>
+                        <p class="card-text game-card-text">Published: {{ game.year_published }}</p>
+                        {% if game.is_in_library %}
+                        <p class="text-success">Added to Library</p>
+                        {% else %}
+                        <form id="game-form-{{ game.bgg_id }}" method="post" action="{% url 'add_game_to_database' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="bgg_id" value="{{ game.bgg_id }}">
+                            <input type="hidden" name="name" value="{{ game.name }}">
+                            <input type="hidden" name="year_published" value="{{ game.year_published }}">
+                            <input type="hidden" name="min_players" value="{{ game.min_players }}">
+                            <input type="hidden" name="max_players" value="{{ game.max_players }}">
+                            <input type="hidden" name="playing_time" value="{{ game.playing_time }}">
+                            <input type="hidden" name="age" value="{{ game.age }}">
+                            <input type="hidden" name="description" value="{{ game.description }}">
+                            <input type="hidden" name="image" value="{{ game.image }}">
+                            <input type="hidden" name="thumbnail" value="{{ game.thumbnail }}">
+                            <button type="submit" class="btn btn-success mt-auto">Add to Library</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:4 and not forloop.last %}
         </div>
-        {% if forloop.counter|divisibleby:4 and not forloop.last %}
-    </div>
-    <div class="row">
-        {% endif %}
-        {% endfor %}
-    </div>
-    {% if is_paginated %}
-    <div class="mt-4 mb-4 text-center">
-        <div class="btn-group" role="group" aria-label="Page navigation">
-            {% if page_obj.has_previous %}
-            <button type="button" class="btn btn-success"
-                onclick="window.location.href='?page={{ page_obj.previous_page_number }}';">&laquo; Previous</button>
-            {% endif %}
-            {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
-            <button type="button" class="btn btn-success"
-                onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
-            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-            <button type="button" class="btn btn-outline-success"
-                onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
+        <div class="row">
             {% endif %}
             {% endfor %}
-            {% if page_obj.has_next %}
-            <button type="button" class="btn btn-success"
-                onclick="window.location.href='?page={{ page_obj.next_page_number }}';">Next &raquo;</button>
-            {% endif %}
         </div>
+        {% if is_paginated %}
+        <div class="mt-4 mb-4 text-center">
+            <div class="btn-group" role="group" aria-label="Page navigation">
+                {% if page_obj.has_previous %}
+                <button type="button" class="btn btn-success"
+                    onclick="window.location.href='?page={{ page_obj.previous_page_number }}';">&laquo;
+                    Previous</button>
+                {% endif %}
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <button type="button" class="btn btn-success"
+                    onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <button type="button" class="btn btn-outline-success"
+                    onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
+                {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                <button type="button" class="btn btn-success"
+                    onclick="window.location.href='?page={{ page_obj.next_page_number }}';">Next &raquo;</button>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
-</div>
-
+</main>
 {% endblock %}

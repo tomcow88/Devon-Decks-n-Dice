@@ -18,12 +18,14 @@ def search_results(request):
     search_term = request.GET.get('query', '')
     if search_term:
         games = fetch_games(search_term)
+        for game in games:
+            game['is_in_library'] = BoardGame.objects.filter(bgg_id=game['bgg_id']).exists()
     else:
         games = []
 
     form = SearchForm(request.GET or None)
     
-    paginator = Paginator(games, 12)
+    paginator = Paginator(games, 20)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     
