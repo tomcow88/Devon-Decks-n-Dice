@@ -284,7 +284,8 @@ form.signup .form-group {
 }
 
 .list-details {
-    background: linear-gradient(to left, #FAF9F6 30%, #198754 100%);
+    /* background: linear-gradient(to left, #FAF9F6 30%, #198754 100%); */
+    background: url("../images/event-info.png") no-repeat center center/cover;
 }
 
 .event-link {
