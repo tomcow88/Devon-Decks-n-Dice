@@ -3,25 +3,27 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="row booking-row">
-        <div class="col-md-8 booking-image-container"><img src="{% static 'images/cafe-interior.png' %}"
-                alt="Cafe Interior" class="booking-image img-fluid"></div>
-        {% if user.is_authenticated %}
-        <div class="col-md-4  booking-form">
-            <h2>Book a Table</h2>
-            <p>Hi {{ user.username|capfirst }}, would you like to make a booking?</p>
-            <form method="post">
-                {% csrf_token %}
-                {{ booking_form|crispy }}
-                <button type="submit" class="btn btn-outline-success">Submit</button>
-            </form>
+<main class="flex-shrink-0">
+    <div class="container mt-5">
+        <div class="row booking-row">
+            <div class="col-md-8 booking-image-container"><img src="{% static 'images/cafe-interior.png' %}"
+                    alt="Cafe Interior" class="booking-image img-fluid"></div>
+            {% if user.is_authenticated %}
+            <div class="col-md-4  booking-form">
+                <h2>Book a Table</h2>
+                <p>Hi {{ user.username|capfirst }}, would you like to make a booking?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ booking_form|crispy }}
+                    <button type="submit" class="btn btn-outline-success">Submit</button>
+                </form>
+            </div>
+            {% else %}
+            <div class="col-md-4 d-flex align-items-center">
+                <h2><a href="{% url 'account_login' %}">Login</a> to book a table!</h2>
+            </div>
+            {% endif %}
         </div>
-        {% else %}
-        <div class="col-md-4 d-flex align-items-center">
-            <h2><a href="{% url 'account_login' %}">Login</a> to book a table!</h2>
-        </div>
-        {% endif %}
     </div>
-</div>
+</main>
 {% endblock %}

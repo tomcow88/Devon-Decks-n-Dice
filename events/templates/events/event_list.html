@@ -3,73 +3,76 @@
 
 {% block content %}
 
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for event in event_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in event.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                    alt="placeholder image">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ event.featured_image.url }}" alt="{{ event.name }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <h5 class="event-name">Event: {{ event.name }}</h5>
+<main class="flex-shrink-0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for event in event_list %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    {% if "placeholder" in event.featured_image.url %}
+                                    <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                        alt="placeholder image">
+                                    {% else %}
+                                    <img class="card-img-top" src=" {{ event.featured_image.url }}"
+                                        alt="{{ event.name }}">
+                                    {% endif %}
+                                    <div class="image-flash">
+                                        <h5 class="event-name">Event: {{ event.name }}</h5>
+                                    </div>
                                 </div>
-                            </div>
-                            <a href="{% url 'event_detail' event.id %}" class="event-link">
-                                <h2 class="card-title">{{ event.excerpt }}</h2>
-                            </a>
-                            <hr />
-                            <div class="row list-details">
-                                <div class="col-md-6 text-start">
-                                    <p class="card-text h5"><i class="fa-regular fa-user me-2"></i> {{ event.attendees.count }} /
-                                        {{ event.max_attendees }}</p>
-                                </div>
-                                <div class="col-md-6 text-end">
-                                    <p class="card-text h5">{{ event.event_date }} at {{ event.event_time }}</p>
+                                <a href="{% url 'event_detail' event.id %}" class="event-link">
+                                    <h2 class="card-title">{{ event.excerpt }}</h2>
+                                </a>
+                                <hr />
+                                <div class="row list-details">
+                                    <div class="col-md-6 text-start">
+                                        <p class="card-text h5"><i class="fa-regular fa-user me-2"></i>
+                                            {{ event.attendees.count }} /
+                                            {{ event.max_attendees }}</p>
+                                    </div>
+                                    <div class="col-md-6 text-end">
+                                        <p class="card-text h5">{{ event.event_date }} at {{ event.event_time }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {% if forloop.counter|divisibleby:3 %}
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </div>
-            <div class="row">
+        </div>
+        {% if is_paginated %}
+        <div class="mt-4 mb-4 text-center">
+            <div class="btn-group" role="group" aria-label="Page navigation">
+                {% if page_obj.has_previous %}
+                <button type="button" class="btn btn-success"
+                    onclick="window.location.href='?page={{ page_obj.previous_page_number }}';">&laquo;
+                    Previous</button>
+                {% endif %}
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <button type="button" class="btn btn-success"
+                    onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <button type="button" class="btn btn-outline-success"
+                    onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
                 {% endif %}
                 {% endfor %}
+                {% if page_obj.has_next %}
+                <button type="button" class="btn btn-success"
+                    onclick="window.location.href='?page={{ page_obj.next_page_number }}';">Next &raquo;</button>
+                {% endif %}
             </div>
         </div>
+        {% endif %}
     </div>
-    {% if is_paginated %}
-    <div class="mt-4 mb-4 text-center">
-        <div class="btn-group" role="group" aria-label="Page navigation">
-            {% if page_obj.has_previous %}
-            <button type="button" class="btn btn-success"
-                onclick="window.location.href='?page={{ page_obj.previous_page_number }}';">&laquo; Previous</button>
-            {% endif %}
-            {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
-            <button type="button" class="btn btn-success"
-                onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
-            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-            <button type="button" class="btn btn-outline-success"
-                onclick="window.location.href='?page={{ num }}';">{{ num }}</button>
-            {% endif %}
-            {% endfor %}
-            {% if page_obj.has_next %}
-            <button type="button" class="btn btn-success"
-                onclick="window.location.href='?page={{ page_obj.next_page_number }}';">Next &raquo;</button>
-            {% endif %}
-        </div>
-    </div>
-    {% endif %}
-</div>
-
+</main>
 {% endblock %}

@@ -169,6 +169,49 @@ footer {
     z-index: 1050;
 }
 
+/*---------Landing Page-----------------------*/
+
+.hero-container {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0 !important;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: calc(100vh - 196px);
+    object-fit: cover;
+}
+
+.hero-cover-text {
+    position: absolute;
+    padding: 20px;
+    background-color: #FFA552;
+    color: #381D2A;
+    border: 1px solid #381D2A;
+    border-radius: 8px;
+    top: 5%;
+    left: 3%;
+    max-width: 400px;
+}
+
+.opening-hours {
+    position: absolute;
+    padding: 20px;
+    background-color: #FFA552;
+    color: #381D2A;
+    border: 1px solid #381D2A;
+    border-radius: 8px;
+}
+
+.opening-hours {
+    bottom: 5%;
+    right: 5%;
+}
 
 /*------------------Accounts------------------*/
 
@@ -373,5 +416,9 @@ form.signup .form-group {
     
     .booking-form {
       flex: 1;
+    }
+
+    .hours-table {
+        font-size: 30px;
     }
   }

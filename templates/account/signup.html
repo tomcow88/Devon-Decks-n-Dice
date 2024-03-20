@@ -6,25 +6,27 @@
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
 {% block content %}
-<div class="container">
-  <div class="row signup-form-head">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <h1>{% trans "Sign Up" %}</h1>
-      <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
-          in</a>.{% endblocktrans %}</p>
+<main class="flex-shrink-0">
+  <div class="container">
+    <div class="row signup-form-head">
+      <div class="col-md-8 mt-3 offset-md-2">
+        <h1>{% trans "Sign Up" %}</h1>
+        <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
+            in</a>.{% endblocktrans %}</p>
+      </div>
+    </div>
+    <div class="row signup-form-body">
+      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+        <div class="px-2 py-1">
+          {{ form|crispy }}
+        </div>
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button type="submit" class="btn btn-primary btn-sm mt-2">{% trans "Sign Up" %}</button>
+      </form>
     </div>
   </div>
-  <div class="row signup-form-body">
-    <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-      {% csrf_token %}
-      <div class="px-2 py-1"> <!-- Reduce padding around form fields -->
-        {{ form|crispy }}
-      </div>
-      {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-      {% endif %}
-      <button type="submit" class="btn btn-primary btn-sm mt-2">{% trans "Sign Up" %}</button> <!-- Smaller button -->
-    </form>
-  </div>
-</div>
+</main>
 {% endblock content %}
