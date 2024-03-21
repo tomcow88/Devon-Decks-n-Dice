@@ -200,7 +200,7 @@ footer {
 
 .hero-image {
     width: 100%;
-    height: calc(100vh - 196px);
+    height: calc(100vh - 136px);
     object-fit: cover;
 }
 
@@ -453,6 +453,10 @@ form.signup .form-group {
 
     .logo {
         height: 120px;
+    }
+
+    .hero-image {
+        height: calc(100vh - 196px);
     }
 
     .hero-cover-text > h5 {
