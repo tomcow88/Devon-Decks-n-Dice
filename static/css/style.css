@@ -353,6 +353,7 @@ form.signup .form-group {
 .event-name {
     margin-left: 5%;
     color: #381D2A;
+    max-width: 60%;
 }
 
 .event-subtitle {
@@ -457,8 +458,9 @@ form.signup .form-group {
         width: auto;
     }
     
-    .booking-form {
-        flex: 1;
+    .booking-form,
+    .booking-login {
+        flex: 1 !important;
     }
 
     .hours-table {
