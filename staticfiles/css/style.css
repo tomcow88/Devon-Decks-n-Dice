@@ -164,11 +164,13 @@ footer {
 /*------------Messages---------------*/
 
 .error {
-    background-color: #cc3300;
+    margin-top: 1rem;
+    background-color: #ff0505;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .success {
+    margin-top: 1rem;
     background-color: #99cc33;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -204,14 +206,19 @@ footer {
 
 .hero-cover-text {
     position: absolute;
+    margin-right: 5vw;
     padding: 20px;
     background-color: #FFA552;
     color: #381D2A;
-    border: 1px solid #381D2A;
+    border: 2px solid #381D2A;
     border-radius: 8px;
     top: 5%;
     left: 3%;
     max-width: 400px;
+}
+
+.hero-cover-text > h5 {
+    font-size: 0.8rem;
 }
 
 .opening-hours {
@@ -219,11 +226,8 @@ footer {
     padding: 20px;
     background-color: #FFA552;
     color: #381D2A;
-    border: 1px solid #381D2A;
+    border: 2px solid #381D2A;
     border-radius: 8px;
-}
-
-.opening-hours {
     bottom: 5%;
     right: 5%;
 }
@@ -398,10 +402,6 @@ form.signup .form-group {
     color: rgb(222, 146, 168);
 }
 
-.success {
-    background-color: #23BBBB;
-}
-
 /*--------------------Library-------------------------*/
 
 .library-header {
@@ -448,9 +448,17 @@ form.signup .form-group {
     .logo {
         height: 120px;
     }
+
+    .hero-cover-text > h5 {
+        font-size: 1rem;
+    }
 }
 
 @media only screen and (min-width: 768px) {
+
+    .hero-cover-text > h5 {
+        font-size: 1.25rem;
+    }
   
     .booking-row {
         flex-direction: row;
