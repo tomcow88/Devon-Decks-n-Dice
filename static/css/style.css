@@ -65,7 +65,7 @@ body {
 main {
     background-color: #FAF9F6;
     padding-top: 30px;
-    min-height: calc(100vh - 196px);
+    min-height: calc(100vh - 136px);
 }
 
 
@@ -444,6 +444,12 @@ form.signup .form-group {
 /*---------Media Queries-----------------------------*/
 
 @media only screen and (min-width: 576px) {
+
+    main {
+        background-color: #FAF9F6;
+        padding-top: 30px;
+        min-height: calc(100vh - 196px);
+    }
 
     .logo {
         height: 120px;
