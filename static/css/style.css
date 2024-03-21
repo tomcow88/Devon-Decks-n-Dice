@@ -164,12 +164,13 @@ footer {
 /*------------Messages---------------*/
 
 .error {
-    background-color: #ff0033;
-    border: 1px solid black;
+    background-color: #cc3300;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .success {
-    border: 1px solid black;
+    background-color: #99cc33;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .message-container {
@@ -429,6 +430,15 @@ form.signup .form-group {
 
 .game-card-body > form {
     margin-top: auto;
+}
+
+.game-search-all {
+    position: relative;
+}
+
+#loading-message {
+    position: absolute;
+    left: 15vw;
 }
 
 /*---------Media Queries-----------------------------*/

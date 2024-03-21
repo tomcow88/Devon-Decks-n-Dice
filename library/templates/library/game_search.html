@@ -3,8 +3,8 @@
 
 {% block content %}
 <main class="flex-shrink-0">
-    <div class="container mt-5">
-        <form action="{% url 'game_search' %}" method="get" class="my-2 my-lg-0">
+    <div class="container mt-5 game-search-all">
+        <form action="{% url 'game_search' %}" method="get" class="my-2 my-lg-0" id="search-form">
             <div class="input-group mb-5">
                 <input type="text" name="query" value="{{ request.GET.query }}" class="form-control"
                     placeholder="Search games" aria-label="Search">
@@ -13,10 +13,12 @@
                 </div>
             </div>
         </form>
-
+        <div id="loading-message" class="d-none mt-3">
+            <h4>Fetching results from the Board Games Geek database<span id="wait"></span></h4>
+        </div>
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
             {% for game in page_obj %}
-            <div class="col">
+            <div class="col game-search-results">
                 <div class="card game-card h-100">
                     <img src="{{ game.image }}" class="card-img-top game-card-img-top" alt="{{ game.name }}">
                     <div class="card-body game-card-body d-flex flex-column">
@@ -75,4 +77,8 @@
         {% endif %}
     </div>
 </main>
+{% endblock %}
+
+{% block extras %}
+<script src="{% static 'js/gamesearch.js' %}"></script>
 {% endblock %}
