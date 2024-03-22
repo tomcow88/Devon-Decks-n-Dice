@@ -1,49 +1,108 @@
-<h1>Devon Decks & Dice Board Games Cafe by Tom Cowen</h1>
+<h1 align="center">Devon Decks & Dice Board Games Cafe by Tom Cowen</h1>
 
-<strong>Table of Contents</strong>
-<ol>
-<li>Introduction</li>
-<li>Features</li>
-<li>Wireframes and Database Diagrams</li>
-<li>Responsiveness</li>
-<li>Browser Compatibility</li>
-<li>Code Validation</li>
-<li>Deployment</li>
-<li>User Story Tests</li>
-<li>Bugs Solved</li>
-<li>Bugs Unresolved</li>
-<li>Future Sprints</li>
-<li>Credits/Sources</li>
-</ol>
+<p align="center">
+<img src=".static/screenshots/images_readme/multi-screen-screenshot.png" width="600" height="100%">
+</p>
 
-<h2>Introduction</h2>
-Devon Decks & Dice, is a full stack website for an imagined board games cafe. It encourages sign up by offering extra features if someone is logged in, such as leaving comments on events (with full CRUD functionality), registering interest in said events, booking tables at the cafe and even creating a personalised user profile to show off favourite board games.
+This is a full-stack framework project built using Django, Python, HTML and CSS. My goal is to create a functioning and responsive website for an imagined board games cafe. This project has been built for educational purposes.
 
-<h2>Features<h2>
-...
+**[Visit my website](https://devon-decks-n-dice-5055496812fd.herokuapp.com/)**
 
-<h2>Wireframes and Database Diagrams</h2>
+SUPERUSER CREDENTIALS:
+username - admin
+password - cowchickensheep
 
-Wireframes and database relational diagrams were created before any coding was started in order to give a good overall picture of what I was aiming for and to prevent any headaches trying to change the database models later on in the project.
+These will be needed to access some features of the site.
 
-Wireframes were created with Balsamiq. The original plans were:
+# Overview
 
-<img src="./static/images/wireframes_1.png" width="600">
+Devon Decks & Dice, is a full stack website for an imagined board games cafe in the imaginary town of Torrington Vale. It encourages user sign up by offering extra features if someone is logged in, such as leaving comments on events (with full CRUD functionality), registering interest in said events, booking tables at the cafe and viewing the cafe's current board game library. It also offers the site admin a feature to search for new games using the board game geek website's API then using it to populate DD&D's own board games database, displaying the game automatically in the site's games library.
 
-<img src="./static/images/wireframes_2.png" width="600">
+# Table of Contents
 
-<img src="./static/images/wireframes_3.png" width="600">
+1. [UX](#ux)
+    - [User Stories](#user-stories)
 
-<img src="./static/images/wireframes_4.png" width="600">
+2. [Scope](#scope)
+    - [Features](#features)
+    - [Future Features](#future-features)
 
-<img src="./static/images/wireframes_5.png" width="600">
+3. [Structure](#structure)
 
-<img src="./static/images/wireframes_6.png" width="600">
+4. [Wireframes](#wireframes)
 
-<img src="./static/images/wireframes_7.png" width="600">
+5. [Database schema](#database-schema)
 
-<img src="./static/images/wireframes_8.png" width="600">
+6. [Surface](#surface)
 
-Entity relationship diagrams were created with Lucidchart:
+7. [Technologies Used](#technologies-used)
 
-<img src="./static/images/erdiagrams.jpeg" width="600">
+8. [Testing](#testing)
+
+9. [Deployment](#deployment)
+
+10. [Credits](#credits)
+
+#
+# UX
+
+Starting with strategy, guided by core UX principles, I considered the target audience and the features that would benefit them.
+
+The target audience for Devon Decks & Dice are:
+
+-trendy young adults and professionals looking to socialise in a different way.
+-families who want to spend time together at the weekends.
+-anyone who likes playing board games!
+
+The users will be looking for:
+
+-An informative, intuitive website with information that is easy to find.
+-The ability to sign up to interact with site content.
+-the ability to book a table at the cafe.
+-the ability to comment and register interest in upcoming events.
+-the ability to see an up to date list of board games available to play at the cafe.
+
+the site admin will be looking for:
+
+-an easy and intuitive way of managing content on the website.
+-an easy way to keep the board games library up to date.
+
+#
+# User Stories
+
+**Epic: Admin**
+
+-As a Site Admin, I will be able to manage table bookings.
+-As a Site Admin, I can search for games I want to add to the games library using the board games geek API. The games I choose will automatically populate the games library.
+-As a Site Admin, I can create, read, update and delete events so that I can manage my events calendar.
+-As a Site Admin, I can manage games available at the cafe in the games library.
+-As a Site Admin, I can create draft events so that I can finish writing the content later.
+-As a Site Admin, I can approve or disapprove comments so that I can filter out objectionable comments.
+-As a Site Admin, I can review suggested games so I can decide whether to add them to the games library or not.
+
+
+**Epic: User Interaction**
+
+-As a Site User, I can make a table booking request.
+-As a Site User / Admin I can view comments on an individual event so that I can read the conversation.
+-As a Site User I can modify or delete my comment on an event so that I can be involved in the conversation.
+
+
+**Epic: Navigation**
+
+-As a Site User, I can view a paginated list of events so that I can select which event to view.
+-As a Site User, I can click on an event from the events page and view it in more detail.
+-As a Site User, I will see a home page so I will know what services are offered on the site and at the Cafe.
+-As a Site User, I can see what games are available to play at the Cafe so I can see if there is one I want to play.
+
+
+**Epic: Login/Register**
+
+-As a Site User, I can register an account so that I can comment on an event, create a profile and suggest games for the library.
+-As a Site User, I can log in/out off my account if I wish so that I can connect or disconnect from the website.
+-As a Site User, I can create a custom profile so that I can display information about myself and games I like.
+
+
+<p align="center">
+<img src=".static/images_readme/screenshots/kanban.png" width="600" height="100%">
+</p>
