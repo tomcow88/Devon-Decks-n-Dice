@@ -64,7 +64,6 @@ body {
 
 main {
     background-color: #FAF9F6;
-    padding-top: 30px;
     min-height: calc(100vh - 136px);
 }
 
@@ -271,6 +270,14 @@ form.signup .form-group {
     border: none;
 }
 
+.event-name {
+    font-size: 14px;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
 .light-bg {
     background-color: #fff;
 }
@@ -406,6 +413,7 @@ form.signup .form-group {
 
 .library-header {
     background: url('../images/event-banner.png') no-repeat center center/contain;
+    padding-top: 0;
 }
 
 .library-img-fluid {
@@ -462,6 +470,14 @@ form.signup .form-group {
     .hero-cover-text > h5 {
         font-size: 1rem;
     }
+
+    .event-name {
+        font-size: 20px;
+    }
+    
+    .card-text {
+        font-size: 20px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -497,5 +513,9 @@ form.signup .form-group {
 
     .game-card-img-top {
         max-height: 320px;
+    }
+
+    .library-header {
+        padding-top: 1rem;
     }
   }
