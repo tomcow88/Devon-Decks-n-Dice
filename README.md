@@ -217,7 +217,7 @@ I would also like to add a custom 404 page.
 
 I ran out of time to implement these features, but they could be implemented in a future deployment of the site.
 
-### **Structure**
+# **Structure**
 
 As the Devon Decks & Dice website is mainly targeted towards customers who intend on coming to the actual cafe, I kept the the structure simple and intuitive with the intention of users being able to quickly and easily access the services they require. I also wanted it to be as easy as possible for the site admin to maintain the website and update the Board Games library.
 
@@ -227,45 +227,45 @@ The website is made from three apps:
 - events - for the events list and event detail pages.
 - library - to display the board games library and provide an easy way for the admin to add games to the library.
 
-### **Wireframes**
+# **Wireframes**
 
 Wireframes were created immediately after the project's inception along with the entity relationship diagrams. Although the structure of the site has changed and evolved to a degree, a lot of the layout of the site was based as closely as possilbe on these images.
 
 All wireframes were created using [Balsamiq](https://balsamiq.com/)
 
 <p>
-<img src="/static/images_readme/wireframes/wireframes_1.jpeg" width="600" height="100%">
+<img src="/static/images_readme/wireframes/wireframes_1.png" width="600" height="100%">
 </p>
 
 <p>
-<img src="/static/images_readme/wireframes/wireframes_2.jpeg" width="600" height="100%">
+<img src="/static/images_readme/wireframes/wireframes_2.png" width="600" height="100%">
 </p>
 
 <p>
-<img src="/static/images_readme/wireframes/wireframes_3.jpeg" width="600" height="100%">
+<img src="/static/images_readme/wireframes/wireframes_3.png" width="600" height="100%">
 </p>
 
 <p>
-<img src="/static/images_readme/wireframes/wireframes_4.jpeg" width="600" height="100%">
+<img src="/static/images_readme/wireframes/wireframes_4.png" width="600" height="100%">
 </p>
 
 <p>
-<img src="/static/images_readme/wireframes/wireframes_5.jpeg" width="600" height="100%">
+<img src="/static/images_readme/wireframes/wireframes_5.png" width="600" height="100%">
 </p>
 
 <p>
-<img src="/static/images_readme/wireframes/wireframes_6.jpeg" width="600" height="100%">
+<img src="/static/images_readme/wireframes/wireframes_6.png" width="600" height="100%">
 </p>
 
 <p>
-<img src="/static/images_readme/wireframes/wireframes_7.jpeg" width="600" height="100%">
+<img src="/static/images_readme/wireframes/wireframes_7.png" width="600" height="100%">
 </p>
 
 <p>
-<img src="/static/images_readme/wireframes/wireframes_8.jpeg" width="600" height="100%">
+<img src="/static/images_readme/wireframes/wireframes_8.png" width="600" height="100%">
 </p>
 
-### **Database Schema**
+# **Database Schema**
 
 Before I set to migrating any models to my database, I created an entity relationship diagram to help me see how the models would link together. I didn't end up using the user profile model in the end as this wasn't implemented in the current version of the website and is down as a future feature.
 
@@ -275,9 +275,9 @@ I also hadn't planned on using the Board Games Geek API initially so the board g
 <img src="/static/images_readme/wireframes/erdiagrams.jpeg" width="600" height="100%">
 </p>
 
-### **Models**
+## **Models**
 
-# **Event Model**
+### **Event Model**
 
 Both the event and the comment models were influenced by the Code Institute, I think therefore I blog walkthrough project.
 
@@ -285,13 +285,13 @@ Both the event and the comment models were influenced by the Code Institute, I t
 <img src="/static/images_readme/screenshots/event_model.png" width="600" height="100%">
 </p>
 
-# **Comment Model**
+### **Comment Model**
 
 <p align="center">
 <img src="/static/images_readme/screenshots/comment_model.png" width="600" height="100%">
 </p>
 
-# **Booking Model**
+### **Booking Model**
 
 The booking model was my most complex model and had to contain various methods to validate the data being submitted by the user. This was done in order to display detailed error messages using the django messages framework, for better UX.
 
@@ -313,7 +313,7 @@ When building the model I tried to add a sixth error message for if the user has
 <img src="/static/images_readme/screenshots/booking_model.png" width="600" height="100%">
 </p>
 
-# **Table Model**
+### **Table Model**
 
 The table model was designed to prevent double booking or overbooking at the cafe by assigning each table in the cafe a unique identifier along with a capacity. This way, once a table is assigned to a booking, it cannot be assigned to another booking on the same date at the same time.
 
@@ -321,7 +321,7 @@ The table model was designed to prevent double booking or overbooking at the caf
 <img src="/static/images_readme/screenshots/table_model.png" width="600" height="100%">
 </p>
 
-# **BoardGame Model**
+### **BoardGame Model**
 
 The board game model has been designed with fields to match those found in the Board Games Geek database in order to make populating and displaying games in the library easier for the site admin.
 
