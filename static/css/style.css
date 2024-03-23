@@ -116,7 +116,8 @@ header {
 .navbar-nav .nav-link {
     white-space: nowrap;
     flex-grow: 1;
-    margin: 0 10px;
+    font-size: 20px;
+    margin: 0 4px;
     margin-bottom: 4px;
   }
 
@@ -514,7 +515,7 @@ form.signup .form-group {
     }
 
     .hours-table {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .game-card-img-top {
@@ -524,4 +525,21 @@ form.signup .form-group {
     .library-header {
         padding-top: 1rem;
     }
-  }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .hours-table {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .navbar-nav .nav-link {
+        margin: 0 10px;
+        font-size: 24px;
+      }
+
+}
+
