@@ -6,7 +6,7 @@
 
 This is a full-stack framework project built using Django, Python, HTML and CSS. My goal is to create a functioning and responsive website for an imagined board games cafe. This project has been built for educational purposes.
 
-**[Visit my website](https://devon-decks-n-dice-5055496812fd.herokuapp.com/)**  
+**[Visit my website](https://devon-decks-n-dice-5055496812fd.herokuapp.com/){:target="_blank"}**  
   
 SUPERUSER CREDENTIALS:  
 username - admin  
@@ -228,7 +228,7 @@ Wireframes were created immediately after the project's inception along with the
 
 Please note, there is no wireframe for the game search page. This is because initially, I thought this page would be too difficult to implement in the time that I had to build the site. I later changed my mind on this and went ahead with the page.
 
-All wireframes were created using [Balsamiq](https://balsamiq.com/).
+All wireframes were created using [Balsamiq](https://balsamiq.com/){:target="_blank"}.
 
 <p>
 <img src="/static/images_readme/wireframes/wireframes_1.png" width="600" height="100%">
@@ -268,7 +268,7 @@ Before I set to migrating any models to my database, I created an entity relatio
 
 I also hadn't planned on using the Board Games Geek API initially so the board game diagram doesn't show the bgg_id field.
 
-The entity relationship diagrams were created using [Lucidchart](https://www.lucidchart.com/).
+The entity relationship diagrams were created using [Lucidchart](https://www.lucidchart.com/){:target="_blank"}.
 
 <p align="center">
 <img src="/static/images_readme/wireframes/erdiagrams.jpeg" width="600" height="100%">
@@ -361,11 +361,11 @@ The colour scheme of the website evolved naturally as I was building it. I wante
 
 ## **Fonts** 
 
-I chose two custom fonts with free licenses from [Fontfabric](https://www.fontfabric.com/) then added them to the static file.
+I chose two custom fonts with free licenses from [Fontfabric](https://www.fontfabric.com/){:target="_blank"} then added them to the static file.
 The fonts I chose were:
 
-- [Gagalin](https://www.fontfabric.com/fonts/gagalin/) - Great for headings and grabbing attention.
-- [Aleo](https://www.fontfabric.com/fonts/aleo/) - I chose this font as it fitted nicely with the board games theme, evoking thoughts of books and games.
+- [Gagalin](https://www.fontfabric.com/fonts/gagalin/){:target="_blank"} - Great for headings and grabbing attention.
+- [Aleo](https://www.fontfabric.com/fonts/aleo/){:target="_blank"} - I chose this font as it fitted nicely with the board games theme, evoking thoughts of books and games.
 
 In the end, I decided against using the Gagalin font as the clarity wasn't very good on smaller screens. I went with the Aleo font for everything although the Gagalin font can still be seen in the static/fonts folder.
 
@@ -373,58 +373,58 @@ In the end, I decided against using the Gagalin font as the clarity wasn't very 
 # **Technologies Used**
 
 ## **Languages**
-- [HTML5](https://en.wikipedia.org/wiki/HTML5)
-- [CSS3](https://en.wikipedia.org/wiki/CSS)
-- [JavaScript](https://www.javascript.com/)
-- [Python](https://www.python.org/)
+- [HTML5](https://en.wikipedia.org/wiki/HTML5){:target="_blank"}
+- [CSS3](https://en.wikipedia.org/wiki/CSS){:target="_blank"}
+- [JavaScript](https://www.javascript.com/){:target="_blank"}
+- [Python](https://www.python.org/){:target="_blank"}
 
 ## **Frameworks, Libraries and Programs**
 
-- [GitHub](https://github.com/) - GitHub is a web-based platform for version control using Git, enabling collaborative software development and hosting of code repositories. GitHub connects to GitPod and Heroku.
+- [GitHub](https://github.com/){:target="_blank"} - GitHub is a web-based platform for version control using Git, enabling collaborative software development and hosting of code repositories. GitHub connects to GitPod and Heroku.
 
-- [GitPod](https://gitpod.io/workspaces) - Connected to GitHub, GitPod hosted the coding space, allowing the project to be built and then committed to the GitHub repository.
+- [GitPod](https://gitpod.io/workspaces){:target="_blank"} - Connected to GitHub, GitPod hosted the coding space, allowing the project to be built and then committed to the GitHub repository.
 
-- [Heroku](https://www.heroku.com/) - Connected to the GitHub repository, Heroku is a cloud application platform used to deploy this project so the backend language can be utilized/tested.
+- [Heroku](https://www.heroku.com/){:target="_blank"} - Connected to the GitHub repository, Heroku is a cloud application platform used to deploy this project so the backend language can be utilized/tested.
 
-- [Django](https://www.djangoproject.com/) - Django is a high-level web framework for building web applications rapidly with a clean and pragmatic design.
+- [Django](https://www.djangoproject.com/){:target="_blank"} - Django is a high-level web framework for building web applications rapidly with a clean and pragmatic design.
 
-- [ElephantSQL](https://api.elephantsql.com) - ElephantSQL is a hosted PostgreSQL database service that can be seamlessly integrated with Django applications, providing scalable and reliable database solutions.
+- [ElephantSQL](https://api.elephantsql.com){:target="_blank"} - ElephantSQL is a hosted PostgreSQL database service that can be seamlessly integrated with Django applications, providing scalable and reliable database solutions.
 
-- [Gunicorn](https://gunicorn.org/) - Gunicorn is a pure-Python HTTP server for WSGI applications.
+- [Gunicorn](https://gunicorn.org/){:target="_blank"} - Gunicorn is a pure-Python HTTP server for WSGI applications.
 
-- [Dj Database URL](https://pypi.org/project/dj-database-url/) - This allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+- [Dj Database URL](https://pypi.org/project/dj-database-url/){:target="_blank"} - This allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
 
-- [Bootstrap](https://getbootstrap.com/) - Bootstrap is a front-end framework for developing responsive and mobile-first websites quickly and efficiently.
+- [Bootstrap](https://getbootstrap.com/){:target="_blank"} - Bootstrap is a front-end framework for developing responsive and mobile-first websites quickly and efficiently.
 
-- [Cloudinary](https://cloudinary.com) - Cloudinary is a cloud-based media management platform that offers solutions for storing, optimizing, and delivering images and videos for web and mobile applications.
+- [Cloudinary](https://cloudinary.com){:target="_blank"} - Cloudinary is a cloud-based media management platform that offers solutions for storing, optimizing, and delivering images and videos for web and mobile applications.
 
-- [Summernote](https://summernote.org/) - Summernote is a Django app that enables users to easily integrate a rich text editor into their web applications, enhancing event creation and description functionality.
+- [Summernote](https://summernote.org/){:target="_blank"} - Summernote is a Django app that enables users to easily integrate a rich text editor into their web applications, enhancing event creation and description functionality.
 
-- [Django-allauth](https://www.intenct.nl/projects/django-allall/) - A comprehensive authentication app for Django, supporting social authentication, registration, and account management.
+- [Django-allauth](https://www.intenct.nl/projects/django-allall/){:target="_blank"} - A comprehensive authentication app for Django, supporting social authentication, registration, and account management.
 
-- [Django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Django Crispy Forms is a Django app that provides a better way to generate forms in your Django application.
+- [Django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/){:target="_blank"} - Django Crispy Forms is a Django app that provides a better way to generate forms in your Django application.
 
-- [Whitenoise](http://whitenoise.evans.io/en/stable/) - WhiteNoise allows your web app to serve its own static files, making it simpler to deploy on services like Heroku.
+- [Whitenoise](http://whitenoise.evans.io/en/stable/){:target="_blank"} - WhiteNoise allows your web app to serve its own static files, making it simpler to deploy on services like Heroku.
 
-- [TinyPNG](https://tinypng.com/) - TinyPNG is a website that offers image compression services to optimize image files for faster loading on webpages while maintaining visual quality.
+- [TinyPNG](https://tinypng.com/){:target="_blank"} - TinyPNG is a website that offers image compression services to optimize image files for faster loading on webpages while maintaining visual quality.
 
-- [Font Awesome](https://fontawesome.com/) - Font Awesome is a library of scalable vector icons that can be easily customized and used to enhance the visual appeal of websites and applications.
+- [Font Awesome](https://fontawesome.com/){:target="_blank"} - Font Awesome is a library of scalable vector icons that can be easily customized and used to enhance the visual appeal of websites and applications.
 
-- [Balsamiq](https://balsamiq.com/) - Balsamiq is a wireframing tool used for creating low-fidelity mockups of user interfaces, allowing for quick and easy visualization of design ideas.
+- [Balsamiq](https://balsamiq.com/){:target="_blank"} - Balsamiq is a wireframing tool used for creating low-fidelity mockups of user interfaces, allowing for quick and easy visualization of design ideas.
 
-- [Lucidchart](https://lucid.app) - Lucidchart is a web-based diagramming tool that allows users to create and collaborate on flowcharts, ERDs, and other visual representations of data and processes.
+- [Lucidchart](https://lucid.app){:target="_blank"} - Lucidchart is a web-based diagramming tool that allows users to create and collaborate on flowcharts, ERDs, and other visual representations of data and processes.
 
-- [Am I Responsive](http://ami.responsivedesign.is/) - Am I Responsive is a web tool that allows users to quickly preview how their website appears on various devices and screen sizes, helping to ensure responsiveness and compatibility across platforms.
+- [Am I Responsive](http://ami.responsivedesign.is/){:target="_blank"} - Am I Responsive is a web tool that allows users to quickly preview how their website appears on various devices and screen sizes, helping to ensure responsiveness and compatibility across platforms.
 
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - The W3C CSS Validator is a tool used to check the validity and syntax of CSS code, ensuring compliance with web standards set by the World Wide Web Consortium (W3C).
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/){:target="_blank"} - The W3C CSS Validator is a tool used to check the validity and syntax of CSS code, ensuring compliance with web standards set by the World Wide Web Consortium (W3C).
 
-- [W3C Markup Validator](https://validator.w3.org/#validate_by_input) - The W3C Markup Validator is a tool used to check the validity and syntax of HTML code, ensuring compliance with web standards set by the World Wide Web Consortium (W3C).
+- [W3C Markup Validator](https://validator.w3.org/#validate_by_input){:target="_blank"} - The W3C Markup Validator is a tool used to check the validity and syntax of HTML code, ensuring compliance with web standards set by the World Wide Web Consortium (W3C).
 
-- [JSHint](https://jshint.com/) - JSHint is a static code analysis tool used for checking JavaScript code for errors, potential problems, and stylistic inconsistencies.
+- [JSHint](https://jshint.com/){:target="_blank"} - JSHint is a static code analysis tool used for checking JavaScript code for errors, potential problems, and stylistic inconsistencies.
 
-- [Pep8ci](https://pep8ci.herokuapp.com/) - Pep8ci provides Python developers with a tool to check their code against the PEP 8 style guide for adherence to coding standards.
+- [Pep8ci](https://pep8ci.herokuapp.com/){:target="_blank"} - Pep8ci provides Python developers with a tool to check their code against the PEP 8 style guide for adherence to coding standards.
 
-- [Lighthouse](https://developer.chrome.com/docs/lighthouse) - Lighthouse is an open-source tool used for auditing web page quality, including performance, accessibility, SEO, and cross-browser testing.
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse){:target="_blank"} - Lighthouse is an open-source tool used for auditing web page quality, including performance, accessibility, SEO, and cross-browser testing.
 
 The full list of requirements for the project along with versions can be seen below.
   
@@ -456,7 +456,7 @@ whitenoise==5.3.0
 
 The site was deployed on Heroku and connected to GitHub for version control. This was done by following the below steps:
 
-- Log in to GitHub and create a new repository, using the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template).
+- Log in to GitHub and create a new repository, using the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template){:target="_blank"}.
 - Sign up for Heroku and create a new account.
 - Create a new app and choose a suitable region for deployment.
 - In the app settings, go to config vars and click "reveal config vars".
@@ -471,27 +471,27 @@ The site was deployed on Heroku and connected to GitHub for version control. Thi
 
 ## **Tech Support**
 
-- [W3Schools](https://www.w3schools.com/) - Used to help understanding with certain features.
+- [W3Schools](https://www.w3schools.com/){:target="_blank"} - Used to help understanding with certain features.
 
-- [Stack Overflow](https://stackoverflow.com/) - Used to inspire me when trying to picture how to implement certain features.
+- [Stack Overflow](https://stackoverflow.com/){:target="_blank"} - Used to inspire me when trying to picture how to implement certain features.
 
-- [ChatGPT](https://openai.com/gpt) - Used to check my code when I had gone code blind looking for bugs.
+- [ChatGPT](https://openai.com/gpt){:target="_blank"} - Used to check my code when I had gone code blind looking for bugs.
 
-- [Code Institute](https://codeinstitute.net/) - I think therefore I blog walkthrough project inspired the events page on my site. I have also learned everything I needed to build this site whilst undertaking the 16 week Full Stack skills bootcamp over the last 4 months.
+- [Code Institute](https://codeinstitute.net/){:target="_blank"} - I think therefore I blog walkthrough project inspired the events page on my site. I have also learned everything I needed to build this site whilst undertaking the 16 week Full Stack skills bootcamp over the last 4 months.
 
 ## **API**
 
-- [Board Games Geek API](https://boardgamegeek.com/wiki/page/BGG_XML_API2) - I used the BGG API for one of the sites main features.
+- [Board Games Geek API](https://boardgamegeek.com/wiki/page/BGG_XML_API2){:target="_blank"} - I used the BGG API for one of the sites main features.
 
-- [Taylor A. Liss](https://www.tayloraliss.com/bggapi/) - It was after reading Taylor's how to guide for the BGG API that I decided it wasn't out of my reach to implement the search feature on my site.
+- [Taylor A. Liss](https://www.tayloraliss.com/bggapi/){:target="_blank"} - It was after reading Taylor's how to guide for the BGG API that I decided it wasn't out of my reach to implement the search feature on my site.
 
 ## **Media**
 
-- [Fontfabric](https://www.fontfabric.com/) - I got the fonts for the site from Fontfabric.
+- [Fontfabric](https://www.fontfabric.com/){:target="_blank"} - I got the fonts for the site from Fontfabric.
 
-- [DALL-E 3](https://openai.com/) - DALL-E 3 was to generate all of the artwork used on the site.
+- [DALL-E 3](https://openai.com/){:target="_blank"} - DALL-E 3 was to generate all of the artwork used on the site.
 
-- [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) - Photoshop was used to edit some of the artwork on the site.
+- [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html){:target="_blank"} - Photoshop was used to edit some of the artwork on the site.
 
 ### **Acknowledgements**
 
