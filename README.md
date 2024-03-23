@@ -230,35 +230,35 @@ Please note, there is no wireframe for the game search page. This is because ini
 
 All wireframes were created using [Balsamiq](https://balsamiq.com/).
 
-<p>
+<p align="center">
 <img src="/docs/images/wireframes/wireframes_1.png" width="600" height="100%">
 </p>
 
-<p>
+<p align="center">
 <img src="/docs/images/wireframes/wireframes_2.png" width="600" height="100%">
 </p>
 
-<p>
+<p align="center">
 <img src="/docs/images/wireframes/wireframes_3.png" width="600" height="100%">
 </p>
 
-<p>
+<p align="center">
 <img src="/docs/images/wireframes/wireframes_4.png" width="600" height="100%">
 </p>
 
-<p>
+<p align="center">
 <img src="/docs/images/wireframes/wireframes_5.png" width="600" height="100%">
 </p>
 
-<p>
+<p align="center">
 <img src="/docs/images/wireframes/wireframes_6.png" width="600" height="100%">
 </p>
 
-<p>
+<p align="center">
 <img src="/docs/images/wireframes/wireframes_7.png" width="600" height="100%">
 </p>
 
-<p>
+<p align="center">
 <img src="/docs/images/wireframes/wireframes_8.png" width="600" height="100%">
 </p>
 
