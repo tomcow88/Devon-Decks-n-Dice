@@ -368,6 +368,12 @@ form.signup .form-group {
     max-width: 60%;
 }
 
+.event-name-detail {
+    margin-left: 5%;
+    color: #381D2A;
+    max-width: 80%;
+}
+
 .event-subtitle {
     margin-left: 5%;
     color: #381D2A;
