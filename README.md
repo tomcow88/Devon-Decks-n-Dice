@@ -6,12 +6,12 @@
 
 This is a full-stack framework project built using Django, Python, HTML and CSS. My goal is to create a functioning and responsive website for an imagined board games cafe. This project has been built for educational purposes.
 
-**[Visit my website](https://devon-decks-n-dice-5055496812fd.herokuapp.com/)**
-
-SUPERUSER CREDENTIALS:
-username - admin
-password - cowchickensheep
-
+**[Visit my website](https://devon-decks-n-dice-5055496812fd.herokuapp.com/)**  
+  
+SUPERUSER CREDENTIALS:  
+username - admin  
+password - cowchickensheep  
+  
 These will be needed to access some features of the site.
 
 # Overview
@@ -427,26 +427,26 @@ In the end, I decided against using the Gagalin font as the clarity wasn't very 
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse) - Lighthouse is an open-source tool used for auditing web page quality, including performance, accessibility, SEO, and cross-browser testing.
 
 The full list of requirements for the project along with versions can be seen below.
-
-asgiref==3.7.2
-cloudinary==1.36.0
-crispy-bootstrap5==0.7
-dj-database-url==0.5.0
-dj3-cloudinary-storage==0.0.6
-Django==4.2.11
-django-allauth==0.57.2
-django-bootstrap-v5==1.0.11
-django-crispy-forms==2.1
-django-summernote==0.8.20.0
-gunicorn==20.1.0
-oauthlib==3.2.2
-psycopg2==2.9.9
-PyJWT==2.8.0
-python3-openid==3.2.0
-requests-oauthlib==1.4.0
-sqlparse==0.4.4
-urllib3==1.26.18
-whitenoise==5.3.0
+  
+asgiref==3.7.2  
+cloudinary==1.36.0  
+crispy-bootstrap5==0.7  
+dj-database-url==0.5.0  
+dj3-cloudinary-storage==0.0.6  
+Django==4.2.11  
+django-allauth==0.57.2  
+django-bootstrap-v5==1.0.11  
+django-crispy-forms==2.1  
+django-summernote==0.8.20.0  
+gunicorn==20.1.0  
+oauthlib==3.2.2  
+psycopg2==2.9.9  
+PyJWT==2.8.0  
+python3-openid==3.2.0  
+requests-oauthlib==1.4.0  
+sqlparse==0.4.4  
+urllib3==1.26.18  
+whitenoise==5.3.0  
 
 # **Testing**
 
