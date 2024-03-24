@@ -252,15 +252,11 @@ The website is made from three apps:
 
 Both the event and the comment models were influenced by the Code Institute, I think therefore I blog walkthrough project.
 
-<p align="center">
-<img src="/docs/images/screenshots/event_model.png" width="600" height="100%">
-</p>
+![the event model](/docs/images/screenshots/event_model.png)
 
 ### **Comment Model**
 
-<p align="center">
-<img src="/docs/images/screenshots/comment_model.png" width="600" height="100%">
-</p>
+![the comment model](/docs/images/screenshots/comment_model.png)
 
 ### **Booking Model**
 
@@ -276,29 +272,21 @@ There are five error messages built into the model for if:
 
 When building the model I tried to add a sixth error message for if the user has already booked a table on the selected date, but encountered an issue with the model searching for a primary key for the booking that had not yet been created. In the end I added this feature to the view instead.
 
-<p align="center">
-<img src="/docs/images/screenshots/booking_choices.png" width="600" height="100%">
-</p>
+![choices for the booking model](/docs/images/screenshots/booking_choices.png)
 
-<p align="center">
-<img src="/docs/images/screenshots/booking_model.png" width="600" height="100%">
-</p>
+![the booking model](/docs/images/screenshots/booking_model.png)
 
 ### **Table Model**
 
 The table model was designed to prevent double booking or overbooking at the cafe by assigning each table in the cafe a unique identifier along with a capacity. This way, once a table is assigned to a booking, it cannot be assigned to another booking on the same date at the same time.
 
-<p align="center">
-<img src="/docs/images/screenshots/table_model.png" width="600" height="100%">
-</p>
+![the table model](/docs/images/screenshots/table_model.png)
 
 ### **BoardGame Model**
 
 The board game model has been designed with fields to match those found in the Board Games Geek database in order to make populating and displaying games in the library easier for the site admin.
 
-<p align="center">
-<img src="/docs/images/screenshots/boardgame_model.png" width="600" height="100%">
-</p>
+![the boardgame model](/docs/images/screenshots/boardgame_model.png)
 
 # **Surface**
 
@@ -310,9 +298,7 @@ I wanted the website to have a clean and functional design. I didn't want to ove
 
 The colour scheme of the website evolved naturally as I was building it. I wanted clean and inviting colours with a good contrast. After a lot of playing around with colour schemes to find one I liked, I ended up with the below.
 
-<p align="center">
-<img src="/docs/images/screenshots/colour_scheme.png" width="600" height="100%">
-</p>
+![the project colour scheme](/docs/images/screenshots/colour_scheme.png)
 
 - **#DD2700** - Used as the navbar background color. It goes nicely with the hero image on the landing page.
 - **#FFA552** - This colour was used to highlight and complement the navbar background colour. It is used for active links amongst other things.
