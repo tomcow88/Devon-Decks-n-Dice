@@ -233,9 +233,7 @@ I also hadn't planned on using the Board Games Geek API initially so the board g
 
 The entity relationship diagrams were created using [Lucidchart](https://www.lucidchart.com/).
 
-<p align="center">
-<img src="/docs/images/wireframes/erdiagrams.jpeg" width="600" height="100%">
-</p>
+![Entity relationship diagrams](/docs/images/wireframes/erdiagrams.jpeg)
 
 
 # **Structure**
