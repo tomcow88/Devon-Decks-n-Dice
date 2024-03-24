@@ -95,37 +95,64 @@ Lighthouse testing was carried out in Google Chrome incognito mode for best resu
 
 ---
 
-![lighthouse score for the landing page](/docs/testing/validation/lighthouse_landing.png)
+![lighthouse score for the landing page](/docs/testing/validation/lighthouse_landing.png)  
 *The Landing Page*
 
 ---
 
-![lighthouse score for the bookings page](/docs/testing/validation/lighthouse_bookings.png)
+![lighthouse score for the bookings page](/docs/testing/validation/lighthouse_bookings.png)  
 *The Bookings Page*
 
 ---
 
-![lighthouse score for the event listings page](/docs/testing/validation/lighthouse_eventlist.png)
+![lighthouse score for the event listings page](/docs/testing/validation/lighthouse_eventlist.png)  
 *The Event Listings Page*
 
 ---
 
-![lighthouse score for the event details page](/docs/testing/validation/lighthouse_eventdetail.png)
+![lighthouse score for the event details page](/docs/testing/validation/lighthouse_eventdetail.png)  
 *The Event Details Page*
 
 ---
 
-![lighthouse score for the games library page](/docs/testing/validation/lighthouse_library.png)
+![lighthouse score for the games library page](/docs/testing/validation/lighthouse_library.png)  
 *The Games Library Page*
 
 ---
 
-![lighthouse score for the games search page](/docs/testing/validation/lighthouse_gamesearch.png)
+![lighthouse score for the games search page](/docs/testing/validation/lighthouse_gamesearch.png)  
 *The Games Search Page*
 
 ---
 
-# Manual Testing
+## **Manual Testing**
 
+### Functional Testing
 
-
+| Page | Feature | Tested? | Input Required | User Feedback Provided | Pass/Fail | Fix |
+|---------|----------|----------|-----------|---------|----------|-----------|
+| Landing | Navbar logo and icons | yes | click | Logo takes the user home, and the icons take the user to the indicated site locations. Nav links have the active class assigned to them. | :white_check_mark: pass | - |
+| Landing | Footer icons | yes | click | Icons take the user to the indicated social links in a new window. | :white_check_mark: pass | - |
+| Landing | Sign up link in hero text. | yes | click | Link takes the user to the sign up page if unregistered and will do nothing if the user is already logged in. | :white_check_mark: pass | User could be given a message saying that they are already logged in. - Future feature |
+| Book a Table | Log in link | yes | click | If logged out, the user will be prompted to log in so that they can use the booking form. link takes user to the log in page. | :white_check_mark: pass | - |
+| Book a Table | Form Submit | yes | text input / click | If the email field or start time field are left blank or filled out incorrectly on the form, the user is prompted to fill them out or fill them out correctly. When the user has filled out the form correctly they will click submit to submit the form. | :white_check_mark: pass | - |
+| Book a Table | Success/Error messages | yes | text input | If the user successfully submits the form, they receive feedback in the form of a message below the header. There are six possible messages - all have been successfully displayed. | :white_check_mark: pass | - |
+| Event Listings | Pagination next | yes | click | Another six events are displayed to the user. | :white_check_mark: pass | - |
+| Event Listings | Pagination previous | yes | click | The previous six events are displayed to the user and the pagination bar indicates the page number. | :white_check_mark: pass | - |
+| Event Listings | Pagination page number | yes | click | The six events assigned on a specific page are displayed to the user and the pagination bar indicates the page number. | :white_check_mark: pass | - |
+| Event Listings | View an event in more detail | yes | click | If the user clicks on an event, they will be able to view it in more detail. | :white_check_mark: pass | - |
+| Event Details | Register interest in attending an event | yes | click on 'I'll be there!' button. | The number attending increases and the 'I can't attend' button is displayed.  | :white_check_mark: pass | - |
+| Event Details | Revoke interest in attending an event | yes | click on 'I can't attend' button. | The number attending decreases and the 'I'll be there!' button is displayed.  | :white_check_mark: pass | - |
+| Event Details | Submit a comment | yes | text input and click. | The comment is displayed in the comments section with the option to edit it or delete it.  | :white_check_mark: pass | - |
+| Event Details | Edit a comment | yes | click | The user's comment appears in the leave a comment text field and the update button is displayed.  | :white_check_mark: pass | - |
+| Event Details | Delete a comment | yes | click | A modal is displayed to the user confirming they wish to delete their comment. Close and Delete buttons are displayed. | :white_check_mark: pass | - |
+| Event Details | Delete comment modal | yes | click | If the user clicks the delete button, the modal disappears and their comment is no longer displayed. If they click close then the modal disappears and their comment is still visible. | :white_check_mark: pass | - |
+| Games Library | View game description | yes | scroll | The user is able to continue reading the game description by scrolling down through its test box. | :white_check_mark: pass | - |
+| Games Library | Pagination next | yes | click | Another six entries are displayed to the user. | :white_check_mark: pass | - |
+| Games Library | Pagination previous | yes | click | The previous six events are displayed to the user and the pagination bar indicates the page number. | :white_check_mark: pass | - |
+| Games Library | Pagination page number | yes | click | The six events assigned on a specific page are displayed to the user and the pagination bar indicates the page number. | :white_check_mark: pass | - |
+| Add to Games Library | Search Games | yes | text input | Upon submitting a search, a wait message is displayed to the user before the search results are returned. The results either have an 'Add to Library' button or an 'Added to Library message below them.  | :white_check_mark: pass | - |
+| Add to Games Library | Add Game to Library | yes | click | A user clicks on the game of choice from the search results and its details are added to the Games Library. The user is taken back to an empty search page. | :white_check_mark: pass | - |
+| Sign Up | Sign Up Form | yes | text input | If the user fills out the form incorrectly, they are prompted on how to fix it. Once the form is successfully submitted, the user is returned to the landing page and a success message is displayed. | :white_check_mark: pass | - |
+| Sign In | Sign In Form | yes | text input | If the user fills in their details incorrectly, an error message is displayed. If they fill in their details correctly and click sign in, they are returned to the landing page and a success message is displayed. Their username is also displayed on the right of the navbar if not collapsed. | :white_check_mark: pass | - |
+| Log Out | Log Out | yes | click | If the user clicks sign out, they are signed out, returned to the landing page and an succes message is displayed. | :white_check_mark: pass | - |
