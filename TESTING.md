@@ -14,11 +14,10 @@ Return back to the [README.md](README.md) file.
     - [Python Validation](#python-validation)
     - [Lighthouse Scores](#lighthouse-scores)
   - [Manual Testing](#manual-testing)
-    - [User Input/Form Validation](#user-inputform-validation)
+    - [Functional Testing](#functional-testing)
     - [Site Responsivity](#site-responsivity)
     - [Browser Compatibility](#browser-compatibility)
     - [Testing User Stories](#testing-user-stories)
-    - [Dev Tools/Real World Device Testing](#dev-toolsreal-world-device-testing)
   - [Bugs](#bugs)
     - [Known Bugs](#known-bugs)
 
@@ -156,3 +155,83 @@ Lighthouse testing was carried out in Google Chrome incognito mode for best resu
 | Sign Up | Sign Up Form | yes | text input | If the user fills out the form incorrectly, they are prompted on how to fix it. Once the form is successfully submitted, the user is returned to the landing page and a success message is displayed. | :white_check_mark: pass | - |
 | Sign In | Sign In Form | yes | text input | If the user fills in their details incorrectly, an error message is displayed. If they fill in their details correctly and click sign in, they are returned to the landing page and a success message is displayed. Their username is also displayed on the right of the navbar if not collapsed. | :white_check_mark: pass | - |
 | Log Out | Log Out | yes | click | If the user clicks sign out, they are signed out, returned to the landing page and an succes message is displayed. | :white_check_mark: pass | - |
+
+---
+
+### Site Responsivity
+
+To test how responsive the site was across various devices and screen sizes, I used Google developer tools which allows you to adjust the size of the page to see how different elemnts react. I tried to build responsivity into my site along the way, predominantly using bootstrap, but also by using media queries in my custom CSS file. The initial results were mostly good but there were a couple of issues that can be seen in the [bugs](#bugs) section below.
+
+I took screen recordings of me using Google dev tools to demonstrate the responsivity of each page. They can be seen below.
+
+![landing page responsivity test](/docs/testing/gifs/landing.gif)  
+*Landing Page*
+
+---
+
+![book a table page responsivity test](/docs/testing/gifs/booking.gif)  
+*Book a Table Page*
+
+---
+
+![event listings page responsivity test](/docs/testing/gifs/event_list.gif)  
+*Event Listings Page*
+
+---
+
+![event detail start of page responsivity test](/docs/testing/gifs/event_detail_start.gif)  
+*Start of Event Detail Page*
+
+![event detail end of page responsivity test](/docs/testing/gifs/event_detail_end.gif)  
+*End of Event Detail Page*
+
+---
+
+![game library page responsivity test](/docs/testing/gifs/library.gif)  
+*Game Library Page*
+
+---
+
+![game search page responsivity test](/docs/testing/gifs/game_search.gif)  
+*Game Search Page*
+
+---
+
+### Browser Compatibility
+
+Devon Decks & Dice was tested on the browsers below. No issues were encountered on any of the platforms used, including Samsung's mobile browser.
+
+| Browser | Issues | Functionality |
+|---------|-------|---------------|
+| Chrome v122.0.6261.129 | none | :white_check_mark: good |
+| FireFox v124.0.1 | none | :white_check_mark: good |
+| Edge v122.0.2365.106  | none | :white_check_mark: good |
+| Samsung Internet v24.0  | none | :white_check_mark: good |
+
+### Testing User Stories
+
+| User Story                 | Acceptance Criteria Met?  | Tested | Response     | Pass/Fail | Fix     |
+|----------------------------|---------------------------|--------|--------------|-----------|---------|
+| Epic: Admin   |                        |    |    |     |    |
+| Manage table bookings   | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| Search games and add to library | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| Events CRUD              | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| Manage Library            | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| Event drafts  | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| Approve comments        | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| Review suggestions   | :x: No                       | Yes    | na    | na      |    To be implemented as a future feature    |
+| Epic: User Interaction   |                        |    |    |     |    |
+| #9 - Visit Us Page         | Yes                       | Yes    | No issues    | Pass      |    -    |
+| #10 - Logout Page          | Yes                       | Yes    | No issues    | Pass      |    -    |
+| #11 - Booking Confirmation Email | Feature not included in this version - 'Should Have' item | | | | |
+| Epic: Epic: Navigation   |                        |    |    |     |    |
+| #13 - Delete User Profile  | Feature left in backlog as currently unnecessary, User can delete individual items and Admin can delete complete account, future version will include delete account | | | | |
+| #14 - Edit Booking         | Yes                       | Yes    | No issues    | Pass      |    -    |
+| #15 - Delete Booking       | Yes                       | Yes    | No issues    | Pass      |    -    |
+| #16 - Error Pages          | Yes                       | Yes    | No issues    | Pass      |    -    |
+| Epic: Log in / Register   |                        |    |    |     |    |
+| #18 - Site Pagination      | Yes                       | Yes    | No issues    | Pass      |    -    |
+| #19 - View Likes           | Yes                       | Yes    | No issues    | Pass      |    -    |
+| #20 - View Articles        | Yes                       | Yes    | No issues    | Pass      |    -    |
+
+
