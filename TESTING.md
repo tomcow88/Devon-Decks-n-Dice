@@ -249,7 +249,7 @@ While going through the process of testing the site, I came accross a few bugs, 
 
 ---
 
-![main element height responsivity bug](/docs/testing/bugs/bug_landing.png)  
+![main element height responsivity bug](/docs/testing/bugs/bug_mainheight.png)  
 *The spacing between the header and footer wasn't large enough on smaller screens when there was less content on the page*  
 
 ---
