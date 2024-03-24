@@ -134,6 +134,10 @@ header {
     background-color: #dd2700;
 }
 
+.navbar-nav .nav-item .dropdown-menu-text {
+    font-size: 1rem;
+}
+
 .navbar-nav .nav-link.active {
     color: #FFA552 !important;
 }
@@ -496,6 +500,7 @@ form.signup .form-group {
     .booking-row {
         flex-direction: row;
         gap: 100px;
+        margin-bottom: 16px;
     }
     
     .booking-image-container {

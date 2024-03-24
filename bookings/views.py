@@ -17,10 +17,17 @@ def create_booking(request):
             try:
                 booking = booking_form.save(commit=False)
                 booking.name = request.user
-                duplicate_bookings = Booking.objects.filter(name=request.user, date=booking.date)
+                duplicate_bookings = Booking.objects.filter(
+                    name=request.user, date=booking.date)
                 if duplicate_bookings.exists():
-                    messages.error(request, 'You have already booked a table on this date. If you want to ammend your booking, please get in touch.')
-                    return render(request, 'bookings/booking_form.html', {'booking_form': booking_form})
+                    messages.error(
+                        request,
+                        'You have already booked a table on this date. '
+                        'If you want to ammend your booking, please get '
+                        'in touch.'
+                    )
+                    return render(request, 'bookings/booking_form.html',
+                                  {'booking_form': booking_form})
                 booking.clean()
                 booking.save()
                 messages.add_message(
@@ -42,7 +49,7 @@ def create_booking(request):
                     messages.error(request, error)
 
     booking_form = BookingForm()
-    
+
     return render(
         request,
         'bookings/booking_form.html',

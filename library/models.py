@@ -4,6 +4,7 @@ from django.db import models
 
 STATUS = ((0, "Unavailable"), (1, "Available"))
 
+
 class BoardGame(models.Model):
     name = models.CharField(max_length=200, unique=True)
     bgg_id = models.IntegerField(unique=True)

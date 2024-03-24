@@ -6,7 +6,6 @@ from django.http import HttpResponseRedirect
 from .models import Event, Comment
 from .forms import CommentForm
 
-# Create your views here.
 
 def home(request):
     return render(request, "index.html")
@@ -19,103 +18,65 @@ class EventList(generic.ListView):
 
 
 def event_detail(request, event_id):
-    """
-    Display an individual :model:`events.Event`.
-
-    **Context**
-
-    ``event``
-        An instance of :model:`events.Event`.
-
-    **Template:**
-
-    :template:`events/event_detail.html`
-    """
-    queryset = Event.objects.all()
-    event = get_object_or_404(queryset, id=event_id)
+    event = get_object_or_404(Event, id=event_id)
     comments = event.comments.all().order_by("-created_on")
     comment_count = event.comments.filter(approved=True).count()
     attendees_count = event.attendees.all().count()
 
-    attending = False
-    if event.attendees.filter(id=request.user.id).exists():
-        attending = True
+    attending = event.attendees.filter(id=request.user.id).exists()
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.author = request.user
-            comment.event = event
-            comment.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Comment submitted and awaiting approval'
+            comment_form.instance.author = request.user
+            comment_form.instance.event = event
+            comment_form.save()
+            messages.success(
+                request, 'Comment submitted and awaiting approval'
+            )
+            return HttpResponseRedirect(
+                reverse('event_detail', args=[event_id])
             )
 
-    comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
 
-    return render(
-        request,
-        "events/event_detail.html",
-        {
-            "event": event,
-            "comments": comments,
-            "comment_count": comment_count,
-            "comment_form": comment_form,
-            "attendees_count": attendees_count,
-            "attending": attending,
-        },
-    )
+    return render(request, "events/event_detail.html", {
+        "event": event,
+        "comments": comments,
+        "comment_count": comment_count,
+        "comment_form": comment_form,
+        "attendees_count": attendees_count,
+        "attending": attending,
+    })
+
 
 def comment_edit(request, event_id, comment_id):
-    """
-    view to edit comments
-    """
+    comment = get_object_or_404(Comment, pk=comment_id, author=request.user)
     if request.method == "POST":
-
-        queryset = Event.objects.filter(status=1)
-        event = get_object_or_404(queryset, id=event_id)
-        comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
-
-        if comment_form.is_valid() and comment.author == request.user:
-            comment = comment_form.save(commit=False)
-            comment.event = event
-            comment.approved = False
-            comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+        if comment_form.is_valid():
+            comment_form.save()
+            messages.success(request, 'Comment Updated!')
+            return HttpResponseRedirect(
+                reverse('event_detail', args=[event_id])
+            )
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
-
+            messages.error(request, 'Error updating comment!')
     return HttpResponseRedirect(reverse('event_detail', args=[event_id]))
+
 
 def comment_delete(request, event_id, comment_id):
-    """
-    view to delete comment
-    """
-    queryset = Event.objects.filter(status=1)
-    post = get_object_or_404(queryset, id=event_id)
-    comment = get_object_or_404(Comment, pk=comment_id)
-
-    if comment.author == request.user:
-        comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
-    else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
- 
+    comment = get_object_or_404(Comment, pk=comment_id, author=request.user)
+    comment.delete()
+    messages.success(request, 'Comment deleted!')
     return HttpResponseRedirect(reverse('event_detail', args=[event_id]))
 
+
 def AttendView(request, event_id):
-    event = get_object_or_404(Event, id=request.POST.get('event_id'))
-
-    attending = False
-
+    event = get_object_or_404(Event, id=event_id)
     if event.attendees.filter(id=request.user.id).exists():
         event.attendees.remove(request.user)
-        attending = False
     else:
         event.attendees.add(request.user)
-        attending = True
-
     return HttpResponseRedirect(reverse('event_detail', args=[event_id]))

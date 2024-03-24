@@ -35,6 +35,7 @@ PARTY_SIZE_CHOICES = (
     (10, '10'),
 )
 
+
 class Table(models.Model):
     table_number = models.IntegerField(unique=True)
     capacity = models.IntegerField()
@@ -42,24 +43,33 @@ class Table(models.Model):
     def __str__(self):
         return f"Table {self.table_number}, Capacity: {self.capacity}"
 
+
 class Booking(models.Model):
-    name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookings")
+    name = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name="bookings")
     email = models.EmailField()
     party_size = models.IntegerField(choices=PARTY_SIZE_CHOICES, default=2)
-    session_length = models.IntegerField(choices=SESSION_LENGTH_CHOICES, default=2)
+    session_length = models.IntegerField(choices=SESSION_LENGTH_CHOICES,
+                                         default=2)
     start_time = models.CharField(max_length=5, choices=TIME_CHOICES)
     end_time = models.TimeField(null=True)
     date = models.DateField(default=now)
-    table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name="bookings")
+    table = models.ForeignKey(Table, on_delete=models.CASCADE,
+                              related_name="bookings")
 
-    def calculate_end_datetime(self): 
-        start_time = datetime.datetime.strptime(self.start_time, '%H:%M').time()
+    def calculate_end_datetime(self):
+        start_time = datetime.datetime.strptime(
+            self.start_time, '%H:%M'
+        ).time()
         start_datetime = datetime.datetime.combine(self.date, start_time)
-        end_datetime = start_datetime + datetime.timedelta(hours=self.session_length)
+        end_datetime = start_datetime + datetime.timedelta(
+            hours=self.session_length)
         return end_datetime
 
     def clean(self):
-        booking_datetime = datetime.datetime.combine(self.date, datetime.datetime.strptime(self.start_time, '%H:%M').time())
+        booking_datetime = datetime.datetime.combine(
+            self.date,
+            datetime.datetime.strptime(self.start_time, '%H:%M').time())
         if booking_datetime < datetime.datetime.now():
             raise ValidationError('Cannot book in the past.')
         if self.date.weekday() in [0]:
@@ -67,9 +77,12 @@ class Booking(models.Model):
         if self.date.weekday() in [1]:
             raise ValidationError("We're closed on Tuesdays!")
         end_datetime = self.calculate_end_datetime()
-        latest_allowable_end_datetime = datetime.datetime.combine(self.date, datetime.time(22, 0))
+        latest_allowable_end_datetime = datetime.datetime.combine(
+            self.date, datetime.time(22, 0))
         if end_datetime > latest_allowable_end_datetime:
-            raise ValidationError('Booking cannot end after 10 PM. Please choose an earlier time or reduce the session length.')
+            raise ValidationError(
+                'Booking cannot end after 10 PM. Please choose an earlier '
+                'time or reduce the session length.')
 
     def save(self, *args, **kwargs):
         self.clean()
@@ -80,12 +93,15 @@ class Booking(models.Model):
 
     def find_available_table(self):
         end_time = self.calculate_end_datetime().time()
-        available_tables = Table.objects.filter(capacity__gte=self.party_size).exclude(
-            bookings__date=self.date,
-            bookings__start_time__lte=end_time.strftime('%H:%M'),
-            bookings__end_time__gte=self.start_time
-        ).order_by('capacity')
+        available_tables = Table.objects.filter(
+            capacity__gte=self.party_size).exclude(
+                bookings__date=self.date,
+                bookings__start_time__lte=end_time.strftime('%H:%M'),
+                bookings__end_time__gte=self.start_time
+            ).order_by('capacity')
         if available_tables:
             return available_tables.first()
         else:
-            raise ValidationError("No available tables for the selected time and party size.")
+            raise ValidationError(
+                "No available tables for the selected time and party size.")
+                

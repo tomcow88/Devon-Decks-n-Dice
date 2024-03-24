@@ -4,7 +4,6 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
 
 class Event(models.Model):
     """
@@ -17,7 +16,8 @@ class Event(models.Model):
     event_date = models.DateField()
     event_time = models.TimeField()
     max_attendees = models.IntegerField()
-    attendees = models.ManyToManyField(User, blank=True, related_name='event')
+    attendees = models.ManyToManyField(
+        User, blank=True, related_name='event_attendees')
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
@@ -39,7 +39,8 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User, blank=True, related_name='comments')
+    likes = models.ManyToManyField(
+        User, blank=True, related_name='comment_likes')
 
     class Meta:
         ordering = ["created_on"]

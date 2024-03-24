@@ -21,9 +21,10 @@
         content="board games, card games, dice games, social gaming, casual hangout, fun atmosphere, cocktails, craft drinks, refreshments, laid-back vibes, cozy ambiance, quality time, friends and family, game nights, entertaining experience">
     <meta name="author" content="Tom Cowen">
     <title>Devon Decks & Dice</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% load bootstrap5 %}
     {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 
 <body>
@@ -58,10 +59,10 @@
                                 <a class="nav-link dropdown-toggle {% if request.path == library_url %}active" aria-current="page{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Games Library</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'library' %}">Library</a>
+                                        <a class="nav-link dropdown-menu-text" href="{% url 'library' %}">Library</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'game_search' %}">Add to Games Library</a>
+                                        <a class="nav-link dropdown-menu-text" href="{% url 'game_search' %}">Add to Games Library</a>
                                     </li>
                                 </ul>
                             </li>
@@ -82,16 +83,16 @@
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     {% if user.is_authenticated %}
                                     <li class="nav-item">
-                                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                                        <a class="nav-link dropdown-menu-text {% if request.path == logout_url %}active{% endif %}"
                                             aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                                     </li>
                                     {% else %}
                                     <li class="nav-item">
-                                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                                        <a class="nav-link dropdown-menu-text {% if request.path == signup_url %}active{% endif %}"
                                             aria-current="page" href="{% url 'account_signup' %}">Register</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                        <a class="nav-link dropdown-menu-text {% if request.path == login_url %}active{% endif %}"
                                             aria-current="page" href="{% url 'account_login' %}">Login</a>
                                     </li>
                                     {% endif %}
