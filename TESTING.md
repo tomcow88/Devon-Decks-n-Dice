@@ -210,28 +210,30 @@ Devon Decks & Dice was tested on the browsers below. No issues were encountered 
 
 ### Testing User Stories
 
+User stories can be reviewed in the Devon Decks & Dice [GitHub project board](https://github.com/users/tomcow88/projects/7/views/1). User stories have been numbered according to how they appear on the project board. Testing was carried out by myself, but also colleagues, friends and family.
+
 | User Story                 | Acceptance Criteria Met?  | Tested | Response     | Pass/Fail | Fix     |
 |----------------------------|---------------------------|--------|--------------|-----------|---------|
-| Epic: Admin   |                        |    |    |     |    |
-| Manage table bookings   | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
-| Search games and add to library | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
-| Events CRUD              | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
-| Manage Library            | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
-| Event drafts  | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
-| Approve comments        | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
-| Review suggestions   | :x: No                       | Yes    | na    | na      |    To be implemented as a future feature    |
-| Epic: User Interaction   |                        |    |    |     |    |
-| #9 - Visit Us Page         | Yes                       | Yes    | No issues    | Pass      |    -    |
-| #10 - Logout Page          | Yes                       | Yes    | No issues    | Pass      |    -    |
-| #11 - Booking Confirmation Email | Feature not included in this version - 'Should Have' item | | | | |
-| Epic: Epic: Navigation   |                        |    |    |     |    |
-| #13 - Delete User Profile  | Feature left in backlog as currently unnecessary, User can delete individual items and Admin can delete complete account, future version will include delete account | | | | |
-| #14 - Edit Booking         | Yes                       | Yes    | No issues    | Pass      |    -    |
-| #15 - Delete Booking       | Yes                       | Yes    | No issues    | Pass      |    -    |
-| #16 - Error Pages          | Yes                       | Yes    | No issues    | Pass      |    -    |
-| Epic: Log in / Register   |                        |    |    |     |    |
-| #18 - Site Pagination      | Yes                       | Yes    | No issues    | Pass      |    -    |
-| #19 - View Likes           | Yes                       | Yes    | No issues    | Pass      |    -    |
-| #20 - View Articles        | Yes                       | Yes    | No issues    | Pass      |    -    |
+| Epic:    |       Admin                 |   - |  -  |   -  | -   |
+| #11 Manage table bookings   | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #18 Search games and add to library | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #6 Events CRUD              | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #12 Manage Library            | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #7 Event drafts  | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #8 Approve comments        | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #14 Review suggestions   | :x: No - Feature not included in this version      | -    | -    | -      |    -    |
+| Epic:    |            User Interaction            |    | -   |   -  |  -  |
+| #10 Make a booking         | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #3 View comments          | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #5 Modify or delete comments | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| Epic:    |          Navigation              |   - | -   | -    |  -  |
+| #1 Event pagination  | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #2 Event details         | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #16 View landing page       | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #13 View games library         | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| Epic:    |          Log in / Register              |  -  |  -  |   -  | -   |
+| #4 Register account      | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #19 Log in/out           | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
+| #9 Create profile        | :x: No - Feature not included in this version      | -    | -    | -      |    -    |
 
 
