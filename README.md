@@ -422,9 +422,9 @@ The site was deployed on Heroku and connected to GitHub for version control. Thi
 
 - [Stack Overflow](https://stackoverflow.com/) - Used to inspire me when trying to picture how to implement certain features.
 
-- [Slack](https://app.slack.com/)
+- [Slack](https://app.slack.com/) - Used to collaborate with my course buddies and learn from colleagues who have encountered similar issues.
 
-- [ChatGPT](https://openai.com/gpt) - Used to check my code when I had gone code blind looking for bugs.
+- [ChatGPT](https://openai.com/gpt) - Used to generate all the example text on the site, also used to point me in the right direction from time to time. 
 
 - [Code Institute](https://codeinstitute.net/) - I think therefore I blog walkthrough project inspired the events page on my site. I have also learned everything I needed to build this site whilst undertaking the 16 week Full Stack skills bootcamp over the last 4 months.
 
