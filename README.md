@@ -183,6 +183,8 @@ Once the results are returned, the admin has the option of adding the chosen gam
 
 ## **Future Features**
 
+After asking a few people to user-test the site for me, the main feedback I received was that table bookings could not be reviewed, ammended or cancelled from the site. This would be the next thing I addressed if I were to continue working on the site.
+
 In the wireframes and user stories I had planned for the users to have a profile page where they could write about themselves, upload an avatar, view the events they have said they will attend, list their top 5 games available at the cafe and view, update or delete any future bookings.
 
 I had also planned to include a form in the Game Library, allowing users to suggest new games for the cafe.
