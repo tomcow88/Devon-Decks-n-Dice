@@ -1,8 +1,7 @@
-<h1 align="center">Devon Decks & Dice Board Games Cafe by Tom Cowen</h1>
+# Devon Decks & Dice Board Games Cafe by Tom Cowen
 
-<p align="center">
-<img src="/docs/images/screenshots/multi-screen-screenshot.png" width="600" height="100%">
-</p>
+
+![devon decks & dice responsive screenshot](/docs/images/screenshots/multi-screen-screenshot.png)
 
 This is a full-stack framework project built using Django, Python, HTML and CSS. My goal is to create a functioning and responsive website for an imagined board games cafe. This project has been built for educational purposes.
 
