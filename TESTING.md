@@ -214,7 +214,7 @@ User stories can be reviewed in the Devon Decks & Dice [GitHub project board](ht
 
 | User Story                 | Acceptance Criteria Met?  | Tested | Response     | Pass/Fail | Fix     |
 |----------------------------|---------------------------|--------|--------------|-----------|---------|
-| Epic:    |       Admin                 |   - |  -  |   -  | -   |
+| -    |      Epic: Admin                 |   - |  -  |   -  | -   |
 | #11 Manage table bookings   | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
 | #18 Search games and add to library | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
 | #6 Events CRUD              | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
@@ -222,18 +222,63 @@ User stories can be reviewed in the Devon Decks & Dice [GitHub project board](ht
 | #7 Event drafts  | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
 | #8 Approve comments        | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
 | #14 Review suggestions   | :x: No - Feature not included in this version      | -    | -    | -      |    -    |
-| Epic:    |            User Interaction            |    | -   |   -  |  -  |
+| -    |           Epic: User Interaction            |  -  | -   |   -  |  -  |
 | #10 Make a booking         | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
 | #3 View comments          | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
 | #5 Modify or delete comments | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
-| Epic:    |          Navigation              |   - | -   | -    |  -  |
+| -    |         Epic: Navigation              |   - | -   | -    |  -  |
 | #1 Event pagination  | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
 | #2 Event details         | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
 | #16 View landing page       | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
 | #13 View games library         | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
-| Epic:    |          Log in / Register              |  -  |  -  |   -  | -   |
+| -    |         Epic: Log in / Register              |  -  |  -  |   -  | -   |
 | #4 Register account      | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
 | #19 Log in/out           | :white_check_mark: Yes                       | Yes    | No issues    | Pass      |    -    |
-| #9 Create profile        | :x: No - Feature not included in this version      | -    | -    | -      |    -    |
+| #9 Create profile        | :x: No - Feature not included in this version      | -    | -    | -      |    -    |  
 
+---
+
+## Bugs
+
+### Known Bugs
+
+While going through the process of testing the site, I came accross a few bugs, the first of which were related to responsivity. They can be seen below.
+
+![landing page responsivity bug](/docs/testing/bugs/bug_landing.png)  
+*The text fields can be seen overlapping here as the sizing wasn't correct on smaller screens*  
+
+---
+
+![main element height responsivity bug](/docs/testing/bugs/bug_landing.png)  
+*The spacing between the header and footer wasn't large enough on smaller screens when there was less content on the page*  
+
+---
+
+Both of these bugs were relatively easy to fix using Google developer tools to identify the offending elements and element classes. They have now been resolved as demonstrated in the [site responsivity](site-responsivity) section.  
+
+---
+
+While I was validating the HTML code I was presented with the following list of errors:  
+
+![landing page HTML validation errors](/docs/testing/validation/HTML_validation_error_detail.png)  
+
+The first issue was that the bootstrap css was being displayed before the document start. When I tried to correct this I ended up placing the bootstrap css after my own css and due to specificity, the styling on the site went completely haywire. It took a good while and a dose of panic before I finally figured out the issue and was able to resolve it.  
+
+The second issue was that I had used the bootstrap navbar dropdown ID more than once in my code. When I removed the ID from one of the offending elements, it took quite a bit of custom css to get the navbar back to how I wanted it to look. The issue was, however, fairly easily resolved.  
+
+The rest of the issues raised in validation were easily resolved.  
+
+---
+
+The last bug on this list is related to the game search function, although it is a minor bug and does not affect the functionality of the feature. Once a game has been searched for and the results have been displayed, if the user clicks back on their browser then the "fetching game" message is displayed on the page even though no game is being searched for. It will stay like this until the user searches for a new game or navigates to a different part of the site.  
+
+![main element height responsivity bug](/docs/testing/bugs/bug_gamesearch.png)  
+
+As this wasn't an easy or obvious fix in the time that I have, I have left it for a future version of the site.  
+
+---
+
+This concludes the TESTING.md.  
+  
+Return back to the [README.md](README.md) file.
 
