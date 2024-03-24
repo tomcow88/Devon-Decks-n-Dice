@@ -220,29 +220,47 @@ Please note, there is no wireframe for the game search page. This is because ini
 
 All wireframes were created using [Balsamiq](https://balsamiq.com/).
 
+---
+
 ![landing page wireframe](/docs/images/wireframes/wireframes_3.png)
 *The landing page*
+
+---
 
 ![table booking wireframe](/docs/images/wireframes/wireframes_5.png)
 *The book a table page*
 
+---
+
 ![event listings wireframe](/docs/images/wireframes/wireframes_1.png)
 *The event listings page*
+
+---
 
 ![event detail wireframe](/docs/images/wireframes/wireframes_2.png)
 *The event detail page*
 
+---
+
 ![games library wireframe](/docs/images/wireframes/wireframes_7.png)
 *The games library page*
+
+---
 
 ![user profile wireframe](/docs/images/wireframes/wireframes_6.png)
 *The un-implemented user profile page - see future features*
 
+---
+
 ![sign up wireframe](/docs/images/wireframes/wireframes_8.png)
 *The sign up page*
 
+---
+
 ![log in wireframe](/docs/images/wireframes/wireframes_4.png)
 *The log in page*
+
+---
 
 
 # **Database Schema**

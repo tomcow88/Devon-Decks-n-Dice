@@ -104,4 +104,3 @@ class Booking(models.Model):
         else:
             raise ValidationError(
                 "No available tables for the selected time and party size.")
-                

@@ -63,3 +63,69 @@ To test my javascript, I used [JSHint](https://jshint.com/). In spite of some ad
 ---
 
 ### Python Validation
+
+I used the [CI Python Linter](https://pep8ci.herokuapp.com/#) to validate my python code and make sure it was pep8 compliant. The majority of my python code needed tweaking to make it compliant and my results are in the below table.
+
+| App/directory | admin.py | forms.py | models.py | urls.py | views.py |
+|---------|----------|----------|-----------|---------|----------|
+| bookings | :white_check_mark: compliant | :white_check_mark: compliant | :white_check_mark: compliant | :white_check_mark: compliant | :white_check_mark: compliant |
+| ddnd  | na | na | na | :white_check_mark: compliant | na |
+| events | :white_check_mark: compliant | :white_check_mark: compliant | :white_check_mark: compliant | :white_check_mark: compliant | :white_check_mark: compliant |
+| library | :white_check_mark: compliant | :white_check_mark: compliant | :white_check_mark: compliant | :white_check_mark: compliant | :x: not compliant |
+
+In the table above, it is seen that the library app's views.py is not pep8 compliant. This is because there were seven lines of code that I couldn't write in 79 characters or under. When I tried I broke the code and would need more time to figure out how to refactor the code to make it pep8 compliant. I to leave it as it is for the moment as for the purposes of this project, working code is more impotant to me that pep8 compliance.
+
+Here is the library views.py result:
+
+![Linter result for library views.py](/docs/testing/validation/search_view_linter.png)
+
+And here is what happened when I tried to contract the code:
+
+![Broken game search page](/docs/testing/bugs/search_view_bug.png)
+
+Here is an example of the feedback I received for the rest of the tests:
+
+![Pep8 compliant result](/docs/testing/validation/pep8_compliant.png)
+
+---
+
+### Lighthouse Scores
+
+Lighthouse testing was carried out in Google Chrome incognito mode for best results. The results are listed below. The lowest scores come in for performace on the pages where I have used large images. Despite running the images through [TinyPNG](https://tinypng.com/), they could still be reduced in size for better performance and given more time, this is something I would do. The results are all well within acceptable limits.
+
+---
+
+![lighthouse score for the landing page](/docs/testing/validation/lighthouse_landing.png)
+*The Landing Page*
+
+---
+
+![lighthouse score for the bookings page](/docs/testing/validation/lighthouse_bookings.png)
+*The Bookings Page*
+
+---
+
+![lighthouse score for the event listings page](/docs/testing/validation/lighthouse_eventlist.png)
+*The Event Listings Page*
+
+---
+
+![lighthouse score for the event details page](/docs/testing/validation/lighthouse_eventdetail.png)
+*The Event Details Page*
+
+---
+
+![lighthouse score for the games library page](/docs/testing/validation/lighthouse_library.png)
+*The Games Library Page*
+
+---
+
+![lighthouse score for the games search page](/docs/testing/validation/lighthouse_gamesearch.png)
+*The Games Search Page*
+
+---
+
+# Manual Testing
+
+
+
