@@ -1,8 +1,5 @@
 {% load static %}
-{% load humanize %}
-{% load bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
+
 {% url 'home' as home_url %}
 {% url 'bookings' as bookings_url %}
 {% url 'events' as events_url %}
@@ -10,6 +7,7 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% load humanize %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +22,8 @@
     <meta name="author" content="Tom Cowen">
     <title>Devon Decks & Dice</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
 </head>
 
 <body>
@@ -149,6 +148,7 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/3c09670cc8.js" crossorigin="anonymous"></script>
+    {% bootstrap_javascript %}
 
     {% block extras %}
     {% endblock %}
