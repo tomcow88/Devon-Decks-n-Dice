@@ -114,4 +114,3 @@ def fetch_games(search_term):
 
         return games_details
     return []
-    

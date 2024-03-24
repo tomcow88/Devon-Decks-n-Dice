@@ -1,4 +1,3 @@
-
 const searchForm = document.getElementById('search-form');
 const loadingMessage = document.getElementById('loading-message');
 const gameSearchResults = document.getElementsByClassName('game-search-results');
@@ -10,9 +9,9 @@ searchForm.addEventListener('submit', function() {
     });
 });
 
-let dots = window.setInterval(() => {
+window.setInterval(() => {
     let wait = document.getElementById("wait");
-    if (wait.innerHTML.length > 3) 
+    if (wait.innerHTML.length > 2) 
         wait.innerHTML = "";
     else 
         wait.innerHTML += ".";
