@@ -1,10 +1,10 @@
+from django.contrib import messages
 from django.db.models import Count
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
-from django.contrib import messages
-from django.http import HttpResponseRedirect
-from .models import Event, Comment
 from .forms import CommentForm
+from .models import Event, Comment
 
 
 def home(request):

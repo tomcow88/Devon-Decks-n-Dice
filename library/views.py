@@ -1,11 +1,11 @@
-from django.http import HttpResponseRedirect, HttpResponseNotAllowed
+import requests
+import xml.etree.ElementTree as ET
 from django.core.paginator import Paginator
 from django.contrib import messages
+from django.http import HttpResponseRedirect, HttpResponseNotAllowed
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import generic
-import requests
-import xml.etree.ElementTree as ET
 from .forms import SearchForm
 from .models import BoardGame
 

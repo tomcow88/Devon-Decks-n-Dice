@@ -1,9 +1,9 @@
-from django.shortcuts import redirect, render, get_object_or_404, reverse
-from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.http import HttpResponseRedirect
+from django.shortcuts import redirect, render, get_object_or_404, reverse
+from django.views import generic
 from .models import Table, Booking
 from .forms import BookingForm
 

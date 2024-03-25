@@ -1,5 +1,5 @@
-from . import views
 from django.urls import path
+from . import views
 
 urlpatterns = [
     path('', views.BoardGameList.as_view(), name='library'),

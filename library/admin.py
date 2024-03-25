@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import BoardGame
 from django_summernote.admin import SummernoteModelAdmin
+from .models import BoardGame
 
 # Register your models here.
 

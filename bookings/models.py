@@ -1,8 +1,8 @@
-from django.db import models
+import datetime
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.db import models
 from django.utils.timezone import now
-import datetime
 
 TIME_CHOICES = (
     ("10:00", "10 AM"),
