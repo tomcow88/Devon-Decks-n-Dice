@@ -10,8 +10,8 @@
                     <h1 class="event-name-detail">{{ event.name }}</h1>
                     <p class="event-subtitle">{{ event.event_date }} at {{ event.event_time }}</p>
                 </div>
-                <div class="d-none d-md-block col-md-8 masthead-image">
-                    <img src="{{ event.featured_image.url }}" class="scale" alt="placeholder">
+                <div class="col-12 col-md-8 masthead-image"> <!-- Remove d-none and add d-md-block -->
+                    <img src="{{ event.featured_image.url }}" class="img-fluid scale" alt="Event Image"> <!-- Ensure img-fluid is added -->
                 </div>
             </div>
         </div>

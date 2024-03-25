@@ -330,15 +330,18 @@ form.signup .form-group {
     background-color: #FFA552;
     color: #ff0033;
     position: relative;
+    z-index: 1;
 }
 
 .masthead-image {
     position: relative;
     overflow: hidden;
     top: -200px;
+    padding-top: 120px;
 }
 
 .masthead-image:after {
+    display: none;
     content: "";
     position: absolute;
     top: 0;
@@ -489,6 +492,10 @@ form.signup .form-group {
     .card-text {
         font-size: 20px;
     }
+
+    .masthead-image {
+        padding-top: none;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -518,6 +525,11 @@ form.signup .form-group {
     .booking-login {
         flex: 1 !important;
     }
+
+    .masthead-image:after {
+        display: block;
+    }
+    
 
     .hours-table {
         font-size: 20px;
