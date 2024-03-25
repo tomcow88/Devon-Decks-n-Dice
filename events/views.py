@@ -8,16 +8,54 @@ from .models import Event, Comment
 
 
 def home(request):
+    """
+    Renders the home page.
+    """
     return render(request, "index.html")
 
 
 class EventList(generic.ListView):
+    """
+    Returns all published posts in :model:`events.Event`
+    and displays them in a page of six posts.
+    **Context**
+
+    ``queryset``
+        All published instances of :model:`events.Event`
+    ``paginate_by``
+        Number of posts per page.
+
+    **Template:**
+
+    :template:`events/event_list.html`
+    """
     queryset = Event.objects.filter(status=1)
     template_name = "events/event_list.html"
     paginate_by = 6
 
 
 def event_detail(request, event_id):
+    """
+    Display an individual :model:`events.Event`.
+
+    **Context**
+
+    ``event``
+        An instance of :model:`events.Event`.
+    ``comments``
+        All approved comments related to the event.
+    ``comment_count``
+        A count of approved comments related to the event.
+    ``comment_form``
+        An instance of :form:`events.CommentForm`
+    ``attendees_count``
+        A count of all users who have registered
+        to attend the event.
+
+    **Template:**
+
+    :template:`events/event_detail.html`
+    """
     event = get_object_or_404(Event, id=event_id)
     comments = event.comments.all().order_by("-created_on")
     comment_count = event.comments.filter(approved=True).count()
@@ -52,6 +90,16 @@ def event_detail(request, event_id):
 
 
 def comment_edit(request, event_id, comment_id):
+    """
+    Display an individual comment for edit.
+
+    **Context**
+
+    ``comment``
+        A single comment related to the post.
+    ``comment_form``
+        An instance of :form:`events.CommentForm`
+    """
     comment = get_object_or_404(Comment, pk=comment_id, author=request.user)
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST, instance=comment)
@@ -67,6 +115,14 @@ def comment_edit(request, event_id, comment_id):
 
 
 def comment_delete(request, event_id, comment_id):
+    """
+    Delete an individual comment.
+
+    **Context**
+
+    ``comment``
+        A single comment related to the event.
+    """
     comment = get_object_or_404(Comment, pk=comment_id, author=request.user)
     comment.delete()
     messages.success(request, 'Comment deleted!')
@@ -74,6 +130,15 @@ def comment_delete(request, event_id, comment_id):
 
 
 def AttendView(request, event_id):
+    """
+    Allows a user to click register their interest in an event
+    and also reverse this.
+
+    **Context**
+
+    ``event``
+        An instance of :model:`events.Event`.
+    """
     event = get_object_or_404(Event, id=event_id)
     if event.attendees.filter(id=request.user.id).exists():
         event.attendees.remove(request.user)

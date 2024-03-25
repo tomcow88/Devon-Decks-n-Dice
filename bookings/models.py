@@ -37,6 +37,10 @@ PARTY_SIZE_CHOICES = (
 
 
 class Table(models.Model):
+    """
+    Represents a table within the restaurant, including its number
+    and seating capacity.
+    """
     table_number = models.IntegerField(unique=True)
     capacity = models.IntegerField()
 
@@ -45,6 +49,10 @@ class Table(models.Model):
 
 
 class Booking(models.Model):
+    """
+    Records a booking made by a user, detailing the party size,
+    session length, and the specific table assigned to the booking.
+    """
     name = models.ForeignKey(User, on_delete=models.CASCADE,
                              related_name="bookings")
     email = models.EmailField()

@@ -11,6 +11,22 @@ from .forms import BookingForm
 # Create your views here.
 
 def create_booking(request):
+    """
+    Handles the creation of a new booking from a POST request, validates the
+    booking form, and ensures that the user does not have a duplicate booking
+    on the same date. It returns an error message if validation fails or if a
+    duplicate booking is detected. On successful booking creation, it redirects
+    the user to the bookings page with a success message.
+
+    **Context**
+
+    ``booking_form``
+        An instance of :form:`bookings.BookingForm`
+
+    **Template:**
+
+    :template:`bookings/booking_form.html`
+    """
     if request.method == 'POST':
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():

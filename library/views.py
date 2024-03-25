@@ -11,12 +11,42 @@ from .models import BoardGame
 
 
 class BoardGameList(generic.ListView):
+    """
+    A view that lists all available board games in the library.
+    
+    **Context**
+    
+    ``queryset``
+        All available instances of :model:`library.BoardGame`
+        ordered by name.
+    ``paginate_by``
+        Number of games per page, set to 6.
+        
+    **Template:**
+    
+    :template:`library/boardgame_list.html`
+    """
     queryset = BoardGame.objects.filter(status=1).order_by('name')
     template_name = "library/boardgame_list.html"
     paginate_by = 6
 
 
 def search_results(request):
+    """
+    Handles the search functionality for board games by querying an external API
+    and displaying the results with pagination.
+    
+    **Context**
+    
+    ``page_obj``
+        A paginator object containing the search results, 20 items per page.
+    ``form``
+        An instance of :form:`library.SearchForm` pre-populated with the search term.
+        
+    **Template:**
+    
+    :template:`library/game_search.html`
+    """
     search_term = request.GET.get('query', '')
     if search_term:
         games = fetch_games(search_term)
@@ -39,6 +69,17 @@ def search_results(request):
 
 
 def add_game_to_database(request):
+    """
+    Processes a POST request to add a new board game to the database based on
+    data fetched from the external API and input by the user.
+    
+    Redirects to the game search page with a success message on successful addition,
+    or displays an error message on failure.
+    
+    **Template:**
+    
+    Redirects to :template:`library/game_search.html` with a status message.
+    """
     if request.method == 'POST':
         try:
             game = BoardGame.objects.create(
@@ -61,6 +102,18 @@ def add_game_to_database(request):
 
 
 def fetch_games(search_term):
+    """
+    Fetches board games from an external API based on the search term provided.
+    Parses the XML response and returns a list of game details.
+    
+    **Parameters**
+    
+    - `search_term`: The query string used for the search.
+    
+    **Returns**
+    
+    - A list of dictionaries, each containing details of a board game.
+    """
     search_response = requests.get(
         f'https://www.boardgamegeek.com/xmlapi2/search?query={search_term}'
         '&type=boardgame')
