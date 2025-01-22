@@ -6,6 +6,7 @@ from django.views import generic
 from .forms import CommentForm
 from .models import Event, Comment
 
+test
 
 def home(request):
     """
